@@ -1,0 +1,18 @@
+administrateur: 
+  identite: Mathis Bureau
+  login: mbureau
+machine:
+  fqdn: [central-cowboy.vm.cfai24.ajformation.fr]
+utilisateurs:
+  - login: root
+    passwd: VVhFXxIQsiqQshtGD8sl
+services:
+    - name: ssh
+      version: OpenSSH_8.7p1
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://central-cowboy.web.cfai24.ajformation.fr/
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://central-cowboy.admin.cfai24.ajformation.fr/

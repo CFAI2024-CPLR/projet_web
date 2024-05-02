@@ -107,8 +107,8 @@ Vous serez noté sur le pull request que vous créerez à la fin,
 - Les sites demandés doivent être fonctionnels
 
 > :warning: **ATTENTION !** Je ne vous demande pas de FAIRE des sites webs, les sites peuvent être vides ! 
-> :warning: 
-> :warning: Ils doivent néanmoins être fonctionnel pour les fournir au client {{ data.web.entreprise }}
+>  
+> Ils doivent néanmoins être fonctionnel pour les fournir au client {{ data.web.entreprise }}
 
 
 Votre PULL REQUEST sera étudié seulement s'il arrive avant le **jeudi 16 mai à 23h50**

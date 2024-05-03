@@ -52,7 +52,17 @@ Travaux réalisés:
 |investor-system.web.cfai24.ajformation.fr.| 2a03:5840:111:1024::5 | Site web vitrine
 |investor-system.admin.cfai24.ajformation.fr.| 2a03:5840:111:1024::5 | Site web de gestion
 
+## Installation des sites web
+Temps de réalisation: 40 minutes
 
+Travaux réalisés:
+- Création des répertoires de travail dans /websites
+- Configuration du serveur Web Nginx
+    > [Commit configuration Nginx](https://github.com/CFAI2024-CPLR/projet_web/commit/d6a5d4f26de6a8bd83486149f500e7beb1debe07)
+- Installation et configuration du [site vitrine - HUGO](http://investor-system.web.cfai24.ajformation.fr) 
+     > [Commit configuration Site vitrine HUGO](https://github.com/CFAI2024-CPLR/projet_web/commit/3b30a9f7dd7daa550cc06fe2f84e54177eeed82c)
+- Installation et configuration du [site de gestion - Vtiger](http://http://investor-system.admin.cfai24.ajformation.fr)
+    > [Commit configuration Site de gestion - Vtiger ](https://github.com/CFAI2024-CPLR/projet_web/commit/904da872b0e5d2f49371c126ee55b705833c081e)
 
 # Utilisateurs
 ## Informations de connexion

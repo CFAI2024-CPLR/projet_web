@@ -65,11 +65,18 @@ Travaux réalisés:
     > [Commit configuration Site de gestion - Vtiger ](https://github.com/CFAI2024-CPLR/projet_web/commit/904da872b0e5d2f49371c126ee55b705833c081e)
 
 ## Gestion des propriétés et des droits 
-Temps de réalisation: 10 minutes
+Temps de réalisation: 35 minutes
 
 Travaux réalisés:
 - Déterminer le propriétaire et le groupe des dossiers 
 - Appliquer les droits aux dossiers 
+- Modifier la configuration nginx pour que l'utilisateur soit webmaster et non www-data
+    > [Commit configuration nginx - Modification utilisateur ](https://github.com/CFAI2024-CPLR/projet_web/commit/399440e135d81cec3e61fb7b6f8d786e7a84dfa1)
+- Modifier la configuration de la socket PHP pour que l'utilisateur soit webmaster et le groupe gestion (pour le site admin)
+    > [Commit configuration socket PHP - Modification utilisateur ](https://github.com/CFAI2024-CPLR/projet_web/commit/514c50147ea4667aa83780ffbd0f7d0d804500f5)
+
+
+[Documentation utilisée ](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 # Utilisateurs
 ## Informations de connexion

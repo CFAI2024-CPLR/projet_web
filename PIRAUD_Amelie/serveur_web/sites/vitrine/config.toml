@@ -1,0 +1,4 @@
+baseURL = "http://investor-system.web.cfai24.ajformation.fr/"
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = "ananke"

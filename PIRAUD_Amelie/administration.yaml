@@ -1,0 +1,40 @@
+administrateur: 
+  identite: Amélie Piraud
+  login: apiraud
+machine:
+  fqdn: [investor-system.vm.cfai24.ajformation.fr]
+utilisateurs:
+  - login: webmaster
+  - login: root
+    passwd: 2^2egale4
+  - login: kflores
+    passwd: 2^1egale2
+  - login: psalas
+    passwd: 2^1egale2
+services:
+    - name: openSSH
+      version: 9.2
+    - name: nginx
+      version: 1.22.1
+    - name: snmpd
+      version: 5.9.3
+    - name: mariadb
+      version: 10.11.6
+    - name: make
+      version: 4.3
+    - name: gcc
+      version: 12.2.0
+    - name: php
+      version: 8.2.7 
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://investor-system.web.cfai24.ajformation.fr
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://investor-system.admin.cfai24.ajformation.fr
+      login: [admin]
+      password: [2^1egale2]
+
+
+

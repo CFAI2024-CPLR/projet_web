@@ -48,9 +48,9 @@ Travaux réalisés:
 
 | FQDN |Adresse IP| Utilisation|
 | :---: | :---: |  :---: |
-|investor-system.vm.cfai24.ajformation.fr|  2a03:5840:111:1024:be24:11ff:fe85:7f62 | Accès SSH 
-|investor-system.web.cfai24.ajformation.| 2a03:5840:111:1024::5 | Site web vitrine
-|investor-system.admin.cfai24.ajformation.| 2a03:5840:111:1024::5 | Site web de gestion
+|investor-system.vm.cfai24.ajformation.fr.|  2a03:5840:111:1024:be24:11ff:fe85:7f62 | Accès SSH 
+|investor-system.web.cfai24.ajformation.fr.| 2a03:5840:111:1024::5 | Site web vitrine
+|investor-system.admin.cfai24.ajformation.fr.| 2a03:5840:111:1024::5 | Site web de gestion
 
 
 

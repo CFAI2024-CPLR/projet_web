@@ -1,0 +1,15 @@
+# ~/.ssh/config
+
+Host customer_ideation_webmaster
+  User webmaster
+
+Host customer_ideation_amcfarland
+  User amcfarland
+
+Host customer_ideation_mbarr
+  User mbarr
+
+Host customer_ideation_*
+  HostName customer-ideation.vm.cfai24.ajformation.fr
+  ControlMaster auto
+  ControlPath ~/.ssh/%C

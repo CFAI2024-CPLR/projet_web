@@ -52,3 +52,47 @@
     - Création d'une clé SSH pour la connexion
     - Interdiction de se connecter via un mot de passe
     - Configuration du SSH
+
+## Création des utilisateurs et des groupes
+
+* [Documentation](Documentation/CreationUtilisateursGroupes.md)
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/ba336ae28f463c2f3bf835d90100674ed422fb63)
+
+- **Temps de réalisation** : 1h
+- **Travaux réalisés** : 
+    - Création du groupe **clpr**
+    - Création du groupe **vitrine**
+    - Création du groupe **gestion**
+    - Création des groupes
+    - Création du compte **webmaster**
+    - Création du compte **amcfarland**
+    - Création du compte **mbarr**
+    - Création des utilisateurs
+    - Attribution des groupes
+    - Ajout des clés SSH pour les nouveaux utilisateurs
+    - Création des utilisateurs et des groupes
+
+# Utilisateurs
+
+* [~/.ssh/config](Configuration/config)
+
+## Root
+
+- **Login** : root
+- **MDP** : \*CuSt0m3r1d34t10N\*
+- **SSH** : La connexion de root en SSH n'est pas autorisée
+
+## Webmaster
+
+- **Login** : webmaster
+- **MDP** : \*W3bM4st3R\*
+
+## Amy MCFARLAND
+
+- **Login** : amcfarland
+- **MDP** : \*4mYMCf4rl4nD\*
+
+## Mavis BARR
+
+- **Login** : mbarr
+- **MDP** : \*M4v1SB4rR\*

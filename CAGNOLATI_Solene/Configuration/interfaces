@@ -1,0 +1,23 @@
+# /etc/network/interfaces
+
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto ens18
+#iface ens18 inet dhcp
+#iface ens18 inet6 auto
+
+# Configuration IPv6 SLAAC
+iface ens18 inet6 static
+    address 2A03:5840:111:1024:BC26:11FF:FE46:D54D/64
+
+# Configuration IPv6 websites
+iface ens18 inet6 static
+    address 2A03:5840:111:1024::42/64

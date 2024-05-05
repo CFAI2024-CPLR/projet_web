@@ -25,3 +25,16 @@
     - Partitionnement et formatage du disque
     - Installation des logiciels essentiels
     - Installation du système d'exploitation
+
+## Configuration du réseau
+
+* [Documentation](Documentation/ConfigurationReseau.md)
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/d55b24db605d06f0ba5dc5d9474724dca078134b)
+* [/etc/network/interfaces](Configuration/interfaces)
+
+- **Temps de réalisation** : 30m
+- **Travaux réalisés** : 
+    - Déterminer l'adresse IPv6 SLAAC
+    - Choix d'une adresse IPv6 fixe pour les sites web
+    - Paramètrage des adresses IPv6 fixes
+    - Configuration du réseau

@@ -38,3 +38,17 @@
     - Choix d'une adresse IPv6 fixe pour les sites web
     - Paramètrage des adresses IPv6 fixes
     - Configuration du réseau
+    
+## Configuration du SSH
+
+* [Documentation](Documentation/ConfigurationSSH.md)
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/e212cfb81c64bf07cccfba2d2408cb0df28b0c63)
+* [/etc/ssh/sshd_config](Configuration/sshd_config)
+
+- **Temps de réalisation** : 1h
+- **Travaux réalisés** : 
+    - Interdiction de la connexion en SSH via l'utilisateur root
+    - Autorisation de la connexion SSH uniquement depuis l'adresse IPv6 **2A03:5840:111:1024:BC26:11FF:FE46:D54D**
+    - Création d'une clé SSH pour la connexion
+    - Interdiction de se connecter via un mot de passe
+    - Configuration du SSH

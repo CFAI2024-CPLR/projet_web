@@ -72,6 +72,18 @@
     - Ajout des clés SSH pour les nouveaux utilisateurs
     - Création des utilisateurs et des groupes
 
+## Configuration de l'arborescence
+
+* [Documentation](Documentation/ConfigurationArborescence.md)
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/55a6cf4d96cbf6f3bd232eb536b996927f30bfc4)
+
+- **Temps de réalisation** : 30m
+- **Travaux réalisés** : 
+    - Création des dossiers
+    - Configuration des propriétés
+    - Attribution des droits
+    - Configuration de l'arborescence
+
 # Utilisateurs
 
 * [~/.ssh/config](Configuration/config)

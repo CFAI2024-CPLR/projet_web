@@ -84,6 +84,23 @@
     - Attribution des droits
     - Configuration de l'arborescence
 
+## Installation des paquets et outils
+
+* [Documentation](Documentation/ConfigurationArborescence.md)
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/727d0becb0a23718826e7468462e7b9acb7ad544)
+
+- **Temps de réalisation** : 2h
+- **Travaux réalisés** : 
+    - Installation de PHP
+    - Installation de Nginx
+    - Installation de MySQL
+    - Installation de SNMP Serveur
+    - Installation de GCC
+    - Installation de Make
+    - Installation de Jekyll
+    - Installation de YetiForce
+    - Installation des paquets et outils
+
 # Utilisateurs
 
 * [~/.ssh/config](Configuration/config)

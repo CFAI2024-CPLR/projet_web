@@ -6,3 +6,5 @@
 - traveaux realisés :
     - Analyse du besoin du client avec l'odre de mission
     - prise de note
+
+# creation de la VM

@@ -6,7 +6,7 @@
 ## Journal des activités
 
 ### Activité 1 : installation et configuration de la vm
-- **Temps de réalisation :** X heures
+- **Temps de réalisation :** 50 minutes
 - **Travaux réalisés :** 
    - configuration de la vm  : 
      Name: internal-linkage-mfleuret
@@ -25,14 +25,17 @@
         mfleuret : mfleuret
       - partitionnement des disque
       ![alt text](image.png)
-
+      - installation des logiciel : 
+        uniquement les utilitaire
+      
 - **Commit :** [Lien du commit](URL_DU_COMMIT)
 - **Lien vers le fichier de configuration final :** [Nom du fichier](URL_DU_FICHIER)
 
-### Activité 2 : <Titre de l'activité>
-- **Temps de réalisation :** X heures
+### Activité 2 : configuration du reseaux ipv6
+- **Temps de réalisation :** 10 min
 - **Travaux réalisés :** 
-   - Description brève des tâches effectuées.
+   - configuration de l'ipv6
+   .![alt text](image.png)
 - **Commit :** [Lien du commit](URL_DU_COMMIT)
 - **Lien vers le fichier de configuration final :** [Nom du fichier](URL_DU_FICHIER)
 

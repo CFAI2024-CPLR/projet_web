@@ -27,3 +27,14 @@ Les DNS sont configurée comme suit :
 - global-vision.web.cfai24.ajformation.fr = 2a03:5840:111:1024::33
 - global-vision.admin.cfai24.ajformation.fr = 2a03:5840:111:1024::33
 
+Configuration de SSH pour écouter sur l'IP : 2a03:5840:111:1024:be24:11ff:fe21:10df
+
+## Configuration des utilisateurs / groupes 
+
+Temps de réalisation 10 minutes :
+
+Réalisation :
+
+- Création des utilisateurs
+- Création des groupes
+- Ajouts des utilisateurs dans les bons groupe

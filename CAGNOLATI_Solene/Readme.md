@@ -101,6 +101,23 @@
     - Installation de YetiForce
     - Installation des paquets et outils
 
+## Configuration des sites web
+
+* [Documentation](Documentation/ConfigurationSitesWeb.md)
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/f07ac4de9bbbb8a2dedbf5dad195eb5f3dc1ef9b)
+* [/etc/php/8.2/fpm/pool.d/www.conf ](Configuration/www.conf)
+* [/etc/nginx/sites-available/vitrine](Configuration/vitrine)
+* [/websites/vitrine/_config.yml](Configuration/_config.yml)
+* [/etc/nginx/sites-available/gestion](Configuration/gestion)
+* [/etc/php/8.2/fpm/php.ini](Configuration/php.ini)
+* [/etc/mysql/mysql.d.conf/mysqld.cnf](Configuration/mysqld.cnf)
+
+- **Temps de réalisation** : 6h
+- **Travaux réalisés** : 
+    - Configuration du site vitrine
+    - Configuration du site gestion
+    - Configuration des sites web
+
 # Utilisateurs
 
 * [~/.ssh/config](Configuration/config)

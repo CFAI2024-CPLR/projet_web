@@ -1,0 +1,24 @@
+# /etc/nginx/sites-available/vitrine
+
+server {
+    listen [2a03:5840:111:1024::42]:80;
+    server_name customer-ideation.web.cfai24.ajformation.fr;
+
+    root /websites/vitrine/_site;
+    index index.markdown index.php index.html index.htm;
+    
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.markdown$ {
+        default_type text/html;
+        charset utf-8;
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    access_log /var/log/nginx/vitrine_access.log;
+    error_log /var/log/nginx/vitrine_error.log;
+}

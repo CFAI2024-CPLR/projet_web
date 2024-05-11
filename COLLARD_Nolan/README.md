@@ -20,3 +20,11 @@ Travaux effectués :
 - configuration des utilisateurs
 - partionnement/formatage du disque
 - selection des logiciels
+
+## Configuration du réseau
+Temps de réalisation : 1h
+
+Travaux effectués :
+- Déterminer l'IPV6
+- Choisir une IPV6 Fixe pour les sites web
+- Paramétrage du réseau

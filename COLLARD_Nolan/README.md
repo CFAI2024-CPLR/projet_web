@@ -28,3 +28,19 @@ Travaux effectués :
 - Déterminer l'IPV6
 - Choisir une IPV6 Fixe pour les sites web
 - Paramétrage du réseau
+
+## Création des utilisateurs et des groupes
+Temps de réalisation : 45 minutes
+
+Travaux effectués :
+- création des groupes vitrine et gestion
+- création des utilisateurs et comptes webmaster, rferretti, cyerger
+- attribution des groupes
+
+## Création de la hiérarchie des dossiers
+Temps de réalisation : 45 minutes
+
+Travaux effectués :
+- création des dossiers
+- modification de propriétaire
+- attribution des droits

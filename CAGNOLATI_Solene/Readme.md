@@ -1,5 +1,7 @@
 # Auteur : CAGNOLATI Solène
 
+* [administration.yaml](administration.yaml)
+
 # Journal d'activités
 
 ## Création de la machine virtuelle

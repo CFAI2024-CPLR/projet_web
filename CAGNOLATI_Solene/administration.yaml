@@ -1,0 +1,34 @@
+administrateur: 
+  identite: Solène Cagnolati
+  login: scagnolati
+machine:
+  fqdn: customer-ideation.vm.cfai24.ajformation.fr
+utilisateurs:
+  - login: webmaster
+    passwd: *W3bM4st3R*
+  - login: root
+    passwd: *CuSt0m3r1d34t10N*
+  - login: amcfarland
+    passwd: *4mYMCf4rl4nD*
+  - login: mbarr
+    passwd: *M4v1SB4rR*
+services:
+    - name: ssh
+      version: 9.2.1
+    - name: nginx
+      version: 1.22.1
+    - name: mysql
+      version: 8.0.35
+    - name: php-fpm
+      version: 8.2
+    - name: snpm
+      version : 5.9.3
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://customer-ideation.web.cfai24.ajformation.fr
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://customer-ideation.admin.cfai24.ajformation.fr
+      login: scagnolati
+      passwd: *CuSt0m3r1d34t10N*

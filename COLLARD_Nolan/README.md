@@ -44,3 +44,30 @@ Travaux effectués :
 - création des dossiers
 - modification de propriétaire
 - attribution des droits
+
+## Création de la configuration SSH
+Temps de réalisation : 30 minutes
+
+Travaux effectués :
+- création d'une clé ssh
+- ajout de la clé aux autres utilisateurs
+- ajout de la clé de Mr Avond aux utilisateurs
+
+
+
+# Utilisateurs
+## Root
+- login : root
+- mdp : Kbdi4Z3!tShz49m8P
+
+## Webmaster
+- login : webmaster
+- mdp : test
+
+## Rachel Ferretti
+- login : rferretti
+- mdp : test
+
+## Corey Yerger
+- login : cyerger
+- mdp : test

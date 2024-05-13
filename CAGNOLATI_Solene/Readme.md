@@ -156,3 +156,24 @@
 
 - **Login** : mbarr
 - **MDP** : \*M4v1SB4rR\*
+
+## Aborescence des fichiers de configuration
+
+- **network**
+<br>└── [/etc/network/interfaces](Configuration/interfaces)
+- **serveur_ssh**
+<br>└── [/etc/ssh/sshd_config](Configuration/sshd_config)
+- **serveur_web**
+<br>├── **php-fpm**
+<br>│&nbsp;&nbsp;&nbsp;&nbsp;├── [/etc/php/8.2/fpm/php.ini](Configuration/php.ini)
+<br>│&nbsp;&nbsp;&nbsp;&nbsp;└── [/etc/php/8.2/fpm/pool.d/www.conf](Configuration/www.conf)
+<br>├── **config**
+<br>│&nbsp;&nbsp;&nbsp;&nbsp;└── *sites-enabled*
+<br>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── [/etc/nginx/sites-available/gestion](Configuration/gestion)
+<br>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── [/etc/nginx/sites-available/vitrine](Configuration/vitrine)
+<br>└── **sites**
+<br>&nbsp;&nbsp;&nbsp;&nbsp;├── *gestion*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;└── *vitrine*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── [/websites/vitrine/_config.yml](Configuration/_config.yml)
+- **serveur_bdd**
+<br>└── [/etc/mysql/mysql.d.conf/mysqld.cnf](Configuration/mysqld.cnf)

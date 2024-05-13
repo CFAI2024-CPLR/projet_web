@@ -1,0 +1,24 @@
+# nano /etc/network/interfaces
+
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug ens18
+# iface ens18 inet dhcp
+# This is an autoconfigured IPv6 interface
+# iface ens18 inet6 auto
+
+# IPv6 SLAAC
+iface ens18 inet6 static
+        address 2a03:5840:111:1024:be24:11ff:fea9:df45/64
+
+# IPv6 websites
+iface ens18 inet6 static
+        address 2a03:5840:111:1024::31/64

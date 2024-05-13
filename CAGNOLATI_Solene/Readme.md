@@ -118,6 +118,18 @@
     - Configuration du site gestion
     - Configuration des sites web
 
+## Enregistrement des FQDN
+
+* [Documentation](Documentation/EnregistrementFQDN.md)
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/3f8dda76af97a18d3e3e519d334ec9929dbb2c2c)
+
+- **Temps de réalisation** : 30m
+- **Travaux réalisés** : 
+    - Enregistrement du FQDN pour l'accès SSH
+    - Enregistrement du FQDN pour le site vitrine
+    - Enregistrement du FQDN pour le site gestion
+    - Enregistrement des FQDN
+
 # Utilisateurs
 
 * [~/.ssh/config](Configuration/config)

@@ -1,0 +1,36 @@
+administrateur: 
+  identite: Lenny Coston
+  login: lcoston
+machine:
+  fqdn: district-ownership.vm.cfai24.ajformation.fr
+utilisateurs:
+  - login: webmaster
+    passwd: 3gecHc917RAFeFUOROXI
+  - login: root
+    passwd: BonjourToto43
+  - login: munga
+    passwd: zeKqumwH81UblPPK3Smz
+  - login: mkasack
+    passwd: LBhsF51N4kOBeM9OfLUb
+services:
+   - name: openssh-server
+      version: 8.7pl
+    - name: httpd
+      version: 2.4.57
+    - name: net-snmp
+      version: 5.9.1
+    - name: mariadb-server
+      version: 10.5.22
+    - name: make
+      version: 4.3
+    - name: gcc
+      version: 11.4.1
+    - name: php
+      version: 8.1.28
+sites_web:
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://district-ownership.admin.cfai24.ajformation.fr/
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://district-ownership.web.cfai24.ajformation.fr

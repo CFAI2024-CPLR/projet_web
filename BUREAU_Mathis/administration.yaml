@@ -6,9 +6,19 @@ machine:
 utilisateurs:
   - login: root
     passwd: VVhFXxIQsiqQshtGD8sl
+  - login: mbureau
+    passwd: null
+  - login: webmaster
+    passwd: aNPMp2nlYBZuWq11zZoo
+  - login: jmujalli
+    passwd: qHdvusPXq15jJ4IjeeCs
+  - login: rwarner
+    passwd: 7QzzH3XV2ohcmQsYNUJ0
 services:
     - name: ssh
       version: OpenSSH_8.7p1
+    - name: nginx
+      version: nginx/1.20.1 (gcc 11.3.1 et openSSL 3.0.7 en supplément)
 sites_web:
     - type: vitrine
       chemin: /websites/vitrine/

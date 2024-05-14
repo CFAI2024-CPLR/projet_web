@@ -26,18 +26,17 @@
 ![image](./images/rockyinstall.jpg)
 
  
-# Activité 2 : COnfiguration du réseau
+# Activité 2 : Configuration du réseau
 
-## Ajout des ipv6 
+## Ajout de l'ipv6 manuelle 
 - Récupérer l'ipv6 automatique (2a03:5840:111:1024:be24:11ff:fe6d:f34a)
-- Sur Rocky utiliser le CLI NetworkManager pour ajouter 2 ip
-    - 2a03:5840:111:1024::7/64 (web)
-    - 2a03:5840:111:1024::8/64 (admin)
+- Sur Rocky utiliser le CLI NetworkManager pour ajouter l'ip
+    - 2a03:5840:111:1024::8/64
 - Utiliser les commande suivante :
-- nmcli connection edit ens18
+- sudo nmcli connection edit ens18
 
 ```
-set ipv6.addresses 2a03:5840:111:1024::7/64, 2a03:5840:111:1024::8/64
+set ipv6.addresses 2a03:5840:111:1024::8/64
 save
 quit
 
@@ -50,3 +49,49 @@ quit
 - Suivre les instructions du site "http://ns1.cfai2024.ajformation.fr:5000"
 
 ![image](./images/DNS.jpg)
+
+# Activité 3 : Configuration des utilisateurs et des groupes
+- Répéter l'opération suivante pour tous les utilisateurs à créer :
+
+```
+sudo adduser jmujalli
+sudo passwd jmujalli
+
+```
+
+- Créer les groupes et ajouter les utilisateurs :
+```
+groupadd cplr
+groupadd vitrine
+groupadd gestion
+
+usermod -aG vitrine webmaster
+usermod -aG vitrine mbureau
+usermod -aG vitrine jmujalli
+
+usermod -aG gestion webmaster
+usermod -aG gestion mbureau
+usermod -aG gestion rwarner
+```
+
+# Activité 4 : Gestion de la hiérarchie des dossiers
+- Effectuer les commandes suivantes : 
+```
+mkdir -p /websites/vitrine
+mkdir -p /websites/gestion
+
+chown webmaster:vitrine /websites/vitrine
+chown webmaster:gestion /websites/gestion
+chmod 775 /websites/vitrine
+chmod 775 /websites/gestion
+```
+
+- Avant d'effectuer la hiérarchie sur le dossier "/websites" il faut installer tous les paquets nécessaires (notamment nginx qui va créer un user) :
+```
+sudo dnf install -y openssh-server gcc make net-snmp nginx mysql php php-fpm php-mysqlnd
+sudo usermod -aG cplr nginx
+sudo chown -R nginx:cplr /websites
+sudo chmod -R 775 /websites
+```
+
+- les utilisateurs sont créés, les dossiers aussi, les autorisations sont en place et les groupes aussi. Il va maintenant falloir passer à l'installation de pico cms et YetiForce ainsi qu'à la configuration de nginx.

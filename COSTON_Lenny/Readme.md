@@ -330,3 +330,16 @@ sudo vi vitrine.conf
 
 sudo ln -s /etc/httpd/sites-available/vitrine.conf /etc/httpd/sites-enabled/vitrine.conf
 ```
+## Ouverture des ports
+
+```bash
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+```
+## SeLinux
+
+Je le met en mode permissive pour pas qu'il me pose de problème, à voir plus tard quel ID règles match pour les commenter.
+```bash
+sudo setenforce 0
+```

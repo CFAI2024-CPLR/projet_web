@@ -110,3 +110,25 @@ Pour accéder au serveur que ce soit en SSH et/ou sites web, je vais crée un en
 |district-ownership.vm.cfai24.ajformation.fr.|  2a03:5840:111:1024:be24:11ff:fed6:e28b | Accès SSH 
 |district-ownership.web.cfai24.ajformation.fr.| 2a03:5840:111:1024::9 | Site web vitrine
 |district-ownership.admin.cfai24.ajformation.fr.| 2a03:5840:111:1024::9 | Site web de gestion
+
+## Création utilisateurs
+```bash
+sudo useradd -mU mkasack -c "Mildred Kasack"
+sudo useradd -mU munga -c "Margaret Unga"
+sudo useradd -mU webmaster
+```
+
+## Changement de mot de passe utilisateurs
+
+```bash
+sudo passwd mkasack
+```
+```bash
+sudo passwd munga
+```
+```bash
+sudo passwd webmaster
+```
+```bash
+sudo passwd root
+```

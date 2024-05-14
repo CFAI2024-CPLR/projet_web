@@ -177,3 +177,54 @@ sudo usermod -a -G vitrine mkasack
 sudo usermod -a -G gestion lcoston
 sudo usermod -a -G vitrine lcoston
 ```
+## Logiciels et services
+```bash
+sudo dnf update
+```
+### OpenSSH
+```bash
+sudo dnf install openssh-server
+sudo systemctl enable --now sshd
+sudo systemctl status sshd
+```
+### Outils de compilation (gcc, make, etc.)
+Ces outils sont essentiels pour la compilation de logiciels à partir des sources :
+```bash
+sudo dnf group install "Development Tools"
+```
+
+Vérification des packages installés demandé:
+```bash
+gcc --version
+make --version
+```
+
+###  SNMP Server
+Pour installer un serveur SNMP (comme Net-SNMP) :
+```bash
+sudo dnf install net-snmp net-snmp-utils
+sudo systemctl enable --now snmpd
+sudo systemctl status snmpd
+```
+###  Apache HTTP Server
+Pour installer Apache :
+```bash
+sudo dnf install httpd
+sudo systemctl enable --now httpd
+sudo systemctl status httpd
+```
+###  MySQL (MariaDB)
+Pour installer MariaDB :
+```bash
+sudo dnf install mariadb-server mariadb
+sudo systemctl enable --now mariadb
+sudo systemctl status mariadb
+```
+### PHP (dernière version)
+```bash
+sudo dnf install epel-release
+sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+sudo dnf module reset php
+sudo dnf module enable php:remi-8.1
+sudo dnf install php php-cli php-fpm php-mysqlnd php-xml php-json php-gd php-mbstring
+```

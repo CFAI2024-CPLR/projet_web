@@ -231,8 +231,65 @@ sudo dnf install php php-cli php-fpm php-mysqlnd php-xml php-json php-gd php-mbs
 
 ## Sites WEB
 Voici le rendu du site web vitrine : [Vitrine](http://district-ownership.web.cfai24.ajformation.fr)
+Voici le rendu du site web gestion : [Gestion](http://district-ownership.web.cfai24.ajformation.fr)
 
+### Vtiger
 
+```bash
+cd /websites/gestion
+sudo wget https://deac-riga.dl.sourceforge.net/project/vtigercrm/vtiger%20CRM%208.1.0/Core%20Product/vtigercrm8.1.0.tar.gz
+sudo tar -xvzf vtigercrm8.1.0.tar.gz
+```
+```bash
+sudo dnf install httpd php php-mysqlnd php-zip php-gd php-mbstring php-xml php-json mariadb-server
+```
+```bash
+sudo chown -R webmaster:gestion /websites/gestion
+```
+```bash
+mysql -u root -p
+```
+```sql
+CREATE DATABASE vtiger;
+CREATE USER 'vtigeruser'@'localhost' IDENTIFIED BY '**************';
+GRANT ALL PRIVILEGES ON vtiger.* TO 'vtigeruser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+## Configuration Vhost du site gestion
+```bash
+cd /etc/httpd/sites-available
+sudo touch gestion.conf
+sudo vi gestion.conf
+
+<VirtualHost *:80>
+    ServerName district-ownership.admin.cfai24.ajformation.fr
+    DocumentRoot /websites/gestion/
+
+    ErrorLog /var/log/httpd/gestion_error.log
+    CustomLog /var/log/httpd/gestion_access.log combined
+
+    <Directory "/websites/gestion/">
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+
+sudo ln -s /etc/httpd/sites-available/gestion.conf /etc/httpd/sites-enabled/gestion.conf
+```
+
+### Hugo
+
+```bash
+cd /websites/vitrine
+sudo wget https://github.com/gohugoio/hugo/releases/download/v0.125.5/hugo_extended_0.125.5_Linux-64bit.tar.gz
+sudo tar -xzf hugo_extended_0.125.5_Linux-64bit.tar.gz -C /usr/local/bin
+hugo new site /website/vitrine/
+hugo
+```
+```bash
+sudo chown -R webmaster:vitrine /websites/vitrine
+```
 ### Hugo
 
 ```bash

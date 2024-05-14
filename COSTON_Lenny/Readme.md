@@ -64,3 +64,32 @@ Une fois connecter sur votre serveur que ce soit en ssh ou en console, metter à
 
 > sudo dnf update && sudo dnf upgrade -y
 ![update](/COSTON_Lenny/images/update_1.png)
+
+## Mettre une IPV6 manuel en plus de celle en SLAAC
+J'utilise la commande "ip a" afin de retrouver les informations ci-dessous:
+- 1: Le nom de la carte réseau utilisé.
+- 2: Adresse IPv6 attribué par le SLAA.
+```bash
+ip a
+```
+
+![ipv6](/COSTON_Lenny/images/ipv6_1.png)
+
+Pour ajouter une autre IPv6, il suffit de tapper cette commande:
+```bash
+sudo nmcli con mod ens18 ipv6.addresses "2a03:5840:111:1024:be24:11ff:fed6:e28b/64, 2a03:5840:111:1024::9/64"
+```
+```bash
+sudo nmcli con up ens18
+```
+
+La commande ci dessous permet de montrer les adresses IPv6 de la carte réseau ens18:
+```bash
+ip -6 addr show ens18
+```
+
+![ipv6](/COSTON_Lenny/images/ipv6_2.png)
+
+Voici le résultat avec les IPv6 de set.
+
+![ipv6](/COSTON_Lenny/images/ipv6_3.png)

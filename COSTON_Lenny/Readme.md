@@ -1,11 +1,73 @@
 # Projet Web
 ## Identité
 
-Nom: COSTON
+**Nom**: COSTON
 
-Prénom: Lenny
+**Prénom**: Lenny
+
+# Journal d'activités
+
+## Création de la machine virtuelle
+Temps de réalisation: 1H00
+
+Travaux réalisés:
+- [Configuration de la VM](#création-vm-rockylinux-93-sur-lhyperviseur-proxmox)
+- [Installation et configuration de l'OS Rocky Linux 9.3](#configuration-de-la-vm-rockylinux-93)
+
+## Configuration réseau / serveur openSSH
+Temps de réalisation: 30 minutes
+
+Travaux réalisés:
+- [Mettre une IPV6 manuel en plus de celle en SLAAC](#mettre-une-ipv6-manuel-en-plus-de-celle-en-slaac)
+- [Ajout clé public SSH Mr Avond sur chaque utilisateurs](#ajout-clé-public-ssh-mr-avond-sur-chaque-utilisateurs)
+- [Configuration SSH](#configuration-ssh)
+
+## Gestion des utilisateurs et groupe
+Temps de réalisation: 30 minutes
+
+Travaux réalisés:
+- [Création utilisateurs](#création-utilisateurs)
+- [Changement de mot de passe utilisateurs](#changement-de-mot-de-passe-utilisateurs)
+- [Ajout utilisateurs aux groupes](#hiérarchie-des-dossiers)
+
+## Installation des paquets
+Temps de réalisation: 10 minutes
+
+Travaux réalisés:
+- [Logiciels et services](#logiciels-et-services)
+
+## Enregistrement DNS
+Temps de réalisation: 10 minutes
+
+Travaux réalisés:
+- [Enregistrement DNS](#enregistrement-dns)
+
+## Installation et configuration des sites web
+Temps de réalisation: 1H00
+
+Travaux réalisés:
+- [Configuration Vhost](#configuration-vhost)
+- [Vtiger](#vtiger)
+      - [Configuration Vhost du site gestion](#configuration-vhost-du-site-gestion)
+      - [Configuration socket PHP](#configuration-socket-php)
+- [HUGO](#hugo)
+      - [Configuration Vhost du site vitrine](#configuration-vhost-du-site-vitrine)
+- [Selinux permissive](#selinux)
+- [Firewalld](#ouverture-des-ports)
+
+# Utilisateurs
+## Informations de connexion
+
+| Utilisateur |login| mot de passe |
+| :---: | :---: | :---: | 
+|root| root | BonjourToto43 |
+|Gabe Newell| webmaster | 3gecHc917RAFeFUOROXI |
+| Margaret Unga | munga | zeKqumwH81UblPPK3Smz |
+| Mildred Kasack | mkasack | LBhsF51N4kOBeM9OfLUb |
+
 
 ##  Création VM RockyLinux 9.3 sur l'hyperviseur Proxmox
+
 Connectez-vous sur la plateforme Proxmox : https://cfai2024.ajformation.fr:8006
 
 ![installation](/COSTON_Lenny/images/installation_1.png)
@@ -63,6 +125,7 @@ Une fois fini l'installation il faut cliquer sur "Redémarrer le système".
 Une fois connecter sur votre serveur que ce soit en ssh ou en console, metter à jour le kernel et package à l'aide de la commande suivante :
 
 > sudo dnf update && sudo dnf upgrade -y
+
 ![update](/COSTON_Lenny/images/update_1.png)
 
 ## Mettre une IPV6 manuel en plus de celle en SLAAC
@@ -229,11 +292,17 @@ sudo dnf module enable php:remi-8.1
 sudo dnf install php php-cli php-fpm php-mysqlnd php-xml php-json php-gd php-mbstring
 ```
 
-## Sites WEB
+# Sites WEB
 Voici le rendu du site web vitrine : [Vitrine](http://district-ownership.web.cfai24.ajformation.fr)
 Voici le rendu du site web gestion : [Gestion](http://district-ownership.web.cfai24.ajformation.fr)
 
-### Vtiger
+## Configuration Vhost
+```bash
+sudo mkdir /etc/httpd/sites-available
+sudo mkdir /etc/httpd/sites-enabled
+```
+
+## Vtiger
 
 ```bash
 cd /websites/gestion
@@ -256,7 +325,7 @@ GRANT ALL PRIVILEGES ON vtiger.* TO 'vtigeruser'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
 ```
-## Configuration Vhost du site gestion
+### Configuration Vhost du site gestion
 ```bash
 cd /etc/httpd/sites-available
 sudo touch gestion.conf
@@ -281,7 +350,7 @@ sudo vi gestion.conf
 
 sudo ln -s /etc/httpd/sites-available/gestion.conf /etc/httpd/sites-enabled/gestion.conf
 ```
-## Configuration socket PHP
+### Configuration socket PHP
 ```bash
 cd /etc/php-fpm.d/
 sudo mkdir vtiger.conf
@@ -306,7 +375,8 @@ php_value[session.save_handler] = files
 php_value[session.save_path]    = /var/lib/php/session
 ```
 
-### Hugo
+
+## Hugo
 
 ```bash
 cd /websites/vitrine
@@ -318,26 +388,7 @@ hugo
 ```bash
 sudo chown -R webmaster:vitrine /websites/vitrine
 ```
-### Hugo
-
-```bash
-cd /websites/vitrine
-sudo wget https://github.com/gohugoio/hugo/releases/download/v0.125.5/hugo_extended_0.125.5_Linux-64bit.tar.gz
-sudo tar -xzf hugo_extended_0.125.5_Linux-64bit.tar.gz -C /usr/local/bin
-hugo new site /website/vitrine/
-hugo
-```
-```bash
-sudo chown -R webmaster:vitrine /websites/vitrine
-```
-
-## Configuration Vhost
-```bash
-sudo mkdir /etc/httpd/sites-available
-sudo mkdir /etc/httpd/sites-enabled
-```
-
-## Configuration Vhost du site vitrine
+### Configuration Vhost du site vitrine
 ```bash
 cd /etc/httpd/sites-available
 sudo touch vitrine.conf

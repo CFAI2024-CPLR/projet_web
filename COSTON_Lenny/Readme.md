@@ -156,3 +156,24 @@ Redémarrer le service SSH
 ```bash
 sudo systemctl restart sshd
 ```
+
+## Hiérarchie des dossiers
+```bash
+sudo mkdir -p /websites/vitrine
+sudo mkdir -p /websites/gestion
+sudo groupadd clpr
+sudo groupadd vitrine
+sudo groupadd gestion
+sudo chown apache:clpr /websites
+sudo chown webmaster:vitrine /websites/vitrine
+sudo chown webmaster:gestion /websites/gestion
+```
+## Ajout utilisateurs aux groupes
+```bash
+sudo usermod -a -G vitrine webmaster
+sudo usermod -a -G gestion webmaster
+sudo usermod -a -G gestion munga
+sudo usermod -a -G vitrine mkasack
+sudo usermod -a -G gestion lcoston
+sudo usermod -a -G vitrine lcoston
+```

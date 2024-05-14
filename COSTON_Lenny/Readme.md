@@ -228,3 +228,48 @@ sudo dnf module reset php
 sudo dnf module enable php:remi-8.1
 sudo dnf install php php-cli php-fpm php-mysqlnd php-xml php-json php-gd php-mbstring
 ```
+
+## Sites WEB
+Voici le rendu du site web vitrine : [Vitrine](http://district-ownership.web.cfai24.ajformation.fr)
+
+
+### Hugo
+
+```bash
+cd /websites/vitrine
+sudo wget https://github.com/gohugoio/hugo/releases/download/v0.125.5/hugo_extended_0.125.5_Linux-64bit.tar.gz
+sudo tar -xzf hugo_extended_0.125.5_Linux-64bit.tar.gz -C /usr/local/bin
+hugo new site /website/vitrine/
+hugo
+```
+```bash
+sudo chown -R webmaster:vitrine /websites/vitrine
+```
+
+## Configuration Vhost
+```bash
+sudo mkdir /etc/httpd/sites-available
+sudo mkdir /etc/httpd/sites-enabled
+```
+
+## Configuration Vhost du site vitrine
+```bash
+cd /etc/httpd/sites-available
+sudo touch vitrine.conf
+sudo vi vitrine.conf
+
+
+<VirtualHost *:80>
+    ServerName district-ownership.web.cfai24.ajformation.fr
+    DocumentRoot /websites/vitrine/public
+    <Directory "/websites/vitrine/public">
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog /var/log/httpd/vitrine_error.log
+    CustomLog /var/log/httpd/vitrine_access.log combined
+</VirtualHost>
+
+
+sudo ln -s /etc/httpd/sites-available/vitrine.conf /etc/httpd/sites-enabled/vitrine.conf
+```

@@ -371,3 +371,15 @@ Je le met en mode permissive pour pas qu'il me pose de problème, à voir plus t
 ```bash
 sudo setenforce 0
 ```
+
+## Modification configuration utilisateur et groupe httpd
+```bash
+cd /etc/httpd/conf/
+sudo vim httpd.conf
+
+# Lignes 71 et 72 changer l'utilisateur et le groupe par webmaster et gestion
+User webmaster
+Group gestion
+
+sudo systemctl restart httpd
+```

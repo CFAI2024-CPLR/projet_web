@@ -1,0 +1,36 @@
+administrateur: 
+  identite: Jonathan Dias
+  login: jdias
+machine:
+  fqdn: [customer-resource.vm.cfai24.ajformation.fr]
+utilisateurs:
+  - login: webmaster
+    passwd: webmaster
+  - login: root
+    passwd: Azertyuiop
+  - login: hrudolph
+    passwd: hrudolph
+  - login: thall
+    passwd: thall
+  - login: jdias
+    passwd: masqué
+services:
+    - name: ssh
+      version: OpenSSH_8.7p1
+    - name: gcc
+      version: GCC 11.4.1 20231218
+    - name: net-snmp
+      version: 5.9.1
+    - name: apache
+      version: Apache/2.4.57
+    - name: MySQL
+      version: mysql  Ver 8.0.36
+    - name: php
+      version: PHP 8.2.13
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: customer-resource.web.cfai24.ajformation.fr
+    - type: gestion
+      chemin: /websites/vitrine/
+      url: customer-resource.admin.cfai24.ajformation.fr

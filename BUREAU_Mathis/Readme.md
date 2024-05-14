@@ -32,14 +32,22 @@
 - Récupérer l'ipv6 automatique (2a03:5840:111:1024:be24:11ff:fe6d:f34a)
 - Sur Rocky utiliser le CLI NetworkManager pour ajouter l'ip
     - 2a03:5840:111:1024::8/64
-- Utiliser les commande suivante :
-- sudo nmcli connection edit ens18
+
+- Tout d'abord utiliser les commandes suivantes pour autoriser le fait d'avoir de multiples ipv6 :
 
 ```
+nmcli connection modify ens18 ipv6.addr-gen-mode eui64
+nmcli connection modify ens18 ipv6.method auto
+nmcli connection modify ens18 ipv6.ip6-privacy 2
+```
+
+- Utiliser ensuite les commande suivante :
+
+```
+sudo nmcli connection edit ens18
 set ipv6.addresses 2a03:5840:111:1024::8/64
 save
 quit
-
 ```
 
 - Redémarrer le service NetworkManager (sudo systemctl restart NetworkManager)
@@ -95,3 +103,23 @@ sudo chmod -R 775 /websites
 ```
 
 - les utilisateurs sont créés, les dossiers aussi, les autorisations sont en place et les groupes aussi. Il va maintenant falloir passer à l'installation de pico cms et YetiForce ainsi qu'à la configuration de nginx.
+
+# Activité 5 : Configuration des sites web
+
+## Pico CMS :
+- Effectuer les commandes suivantes : 
+```
+cd /websites/vitrine
+sudo curl -LO https://github.com/picocms/Pico/releases/download/v2.1.4/pico-release-v2.1.4.tar.gz
+sudo tar -xzvf pico-release-v2.1.4.tar.gz
+```
+
+## YetiForce :
+- Effectuer les commandes suivantes : 
+```
+cd /websites/gestion
+sudo curl -LO https://github.com/YetiForceCompany/YetiForceCRM/releases/download/6.4.0/YetiForceCRM-6.4.0-complete.zip
+sudo unzip YetiForceCRM-6.4.0-complete.zip
+```
+
+

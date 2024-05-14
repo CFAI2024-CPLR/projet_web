@@ -53,7 +53,12 @@ Travaux effectués :
 - ajout de la clé aux autres utilisateurs
 - ajout de la clé de Mr Avond aux utilisateurs
 
+## Création des paquets et outils
+Temps de réalisation : 3h
 
+Travaux effectués :
+- installation des paquets (php, mysql, apache, make, gcc, snmp serveur, serveur ssh)
+- installation des outils ( jekyll, espocrm)
 
 # Utilisateurs
 ## Root

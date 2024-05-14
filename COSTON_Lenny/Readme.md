@@ -37,3 +37,24 @@ Il faut mettre 2 au lieu de "1"
 Cliquer sur "Finish"
 
 ![installation](/COSTON_Lenny/images/installation_8.png)
+
+### Configuration de la VM RockyLinux 9.3
+J'ai choisi le langague Français.
+
+![configuration](/COSTON_Lenny/images/configuration_1.png)
+
+Les facteurs à parametrer avant de faire l'installation.
+
+![configuration](/COSTON_Lenny/images/configuration_2.png)
+
+Voici les partitionnements demandés:
+
+![configuration](/COSTON_Lenny/images/configuration_3.png)
+
+L'installation se fait.
+
+![configuration](/COSTON_Lenny/images/configuration_4.png)
+
+Une fois fini l'installation il faut cliquer sur "Redémarrer le système".
+
+![configuration](/COSTON_Lenny/images/configuration_5.png)

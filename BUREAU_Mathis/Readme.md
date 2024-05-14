@@ -122,4 +122,66 @@ sudo curl -LO https://github.com/YetiForceCompany/YetiForceCRM/releases/download
 sudo unzip YetiForceCRM-6.4.0-complete.zip
 ```
 
+# Activité 6 : configuration de nginx
 
+## Création des fichiers de configuration :
+```
+sudo nano /etc/nginx/conf.d/central-cowboy.web.conf
+
+server {
+    listen 80;
+    server_name central-cowboy.web.cfai24.ajformation.fr;
+
+    root /websites/vitrine;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass unix:/run/php-fpm/www.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+
+save & quit
+
+sudo nano /etc/nginx/conf.d/central-cowboy.admin.conf
+
+server {
+    listen 80;
+    server_name central-cowboy.admin.cfai24.ajformation.fr;
+
+    root /websites/gestion;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass unix:/run/php-fpm/www.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}
+
+save & quit
+ ```
+
+- Ajouter des règles au pare-feu pour autoriser le port 80 et 443 (http et https) :
+```
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+
+sudo systemctl restart nginx
+
+# Test de la connectivité localement avec curl
+curl -I http://central-cowboy.web.cfai24.ajformation.fr
+curl -I http://central-cowboy.admin.cfai24.ajformation.fr
+```

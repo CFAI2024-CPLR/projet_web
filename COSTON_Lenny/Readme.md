@@ -273,9 +273,37 @@ sudo vi gestion.conf
         AllowOverride All
         Require all granted
     </Directory>
+    <FilesMatch \.php$>
+       SetHandler "proxy:unix:/run/php-fpm/vtiger.sock|fcgi://localhost/"
+    </FilesMatch>
+
 </VirtualHost>
 
 sudo ln -s /etc/httpd/sites-available/gestion.conf /etc/httpd/sites-enabled/gestion.conf
+```
+## Configuration socket PHP
+```bash
+cd /etc/php-fpm.d/
+sudo mkdir vtiger.conf
+
+[source]
+user = webmaster
+group = gestion
+listen = /run/php-fpm/vtiger.sock
+listen.owner = webmaster
+listen.group = gestion
+listen.mode = 0775
+
+pm = dynamic
+pm.max_children = 50
+pm.start_servers = 5
+pm.min_spare_servers = 5
+pm.max_spare_servers = 35
+
+php_admin_value[error_log] = /var/log/php-fpm/vtiger-error.log
+php_admin_flag[log_errors] = on
+php_value[session.save_handler] = files
+php_value[session.save_path]    = /var/lib/php/session
 ```
 
 ### Hugo

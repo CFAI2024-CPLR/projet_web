@@ -93,3 +93,20 @@ ip -6 addr show ens18
 Voici le résultat avec les IPv6 de set.
 
 ![ipv6](/COSTON_Lenny/images/ipv6_3.png)
+
+## Faire un enregistrement DNS
+Pour accéder au serveur que ce soit en SSH et/ou sites web, je vais crée un enregistrement DNS en fonction des IPv6.
+
+![dns](/COSTON_Lenny/images/dns_1.png)
+- 1: Rendez-vous sur le site: http://ns1.cfai2024.ajformation.fr:5000/
+- 2: Insérer l'identifiant de l'hyperviseur Proxmox.
+- 3: Insérer le mot de passe de votre compte Proxmox.
+- 4: Insérer le nom de l'enregistrement.
+- 5: Insérer l'adresse IPv6 sur laquel que vous voulez que l'enregistrement DNS target. 
+- 6: Une fois tout bien remplie, cliquer sur "Envoyer"
+
+| FQDN |Adresse IPv6| Utilisation|
+| :---: | :---: |  :---: |
+|district-ownership.vm.cfai24.ajformation.fr.|  2a03:5840:111:1024:be24:11ff:fed6:e28b | Accès SSH 
+|district-ownership.web.cfai24.ajformation.fr.| 2a03:5840:111:1024::9 | Site web vitrine
+|district-ownership.admin.cfai24.ajformation.fr.| 2a03:5840:111:1024::9 | Site web de gestion

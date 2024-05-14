@@ -58,3 +58,9 @@ L'installation se fait.
 Une fois fini l'installation il faut cliquer sur "Redémarrer le système".
 
 ![configuration](/COSTON_Lenny/images/configuration_5.png)
+
+## Mise à jour du kernel et des packages
+Une fois connecter sur votre serveur que ce soit en ssh ou en console, metter à jour le kernel et package à l'aide de la commande suivante :
+
+> sudo dnf update && sudo dnf upgrade -y
+![update](/COSTON_Lenny/images/update_1.png)

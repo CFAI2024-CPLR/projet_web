@@ -132,3 +132,27 @@ sudo passwd webmaster
 ```bash
 sudo passwd root
 ```
+
+## Ajout clé public SSH Mr Avond sur chaque utilisateurs
+
+```bash 
+su  [nom_utilisateur]
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+vi ~/.ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWsfbTbSlxcvxUL1286nwhwrDPJq6bctkxPpZ+TyujHrDwyymvqEjMJNxiwDPRoomPgOcg+YYUYXbfRiLp0VNlUqA5oG9nhlgtiryZrWY6zrywnsDOk6wJvWA/YNbWLlFN14OiKXOH5KJpgYQh1pLIw1TPeR56vU5wv1Ggb0Jr1sg14TJgm2M4lSmQs1CAY8hBLDj/qQcwVNtuYqTXOulwCPZAzhP6ncHM7lHbwJua/3bGQ8IeFzjRGjL0s2XVECYPufCbM0cX1VtmaSQdVmwqXGW2c+rPAq8cFHecfaw/0fdSMeNV4qSl+VqpCGn/XXnpWAYi0OfifddH80ffdAp5 /home/jerome/.ssh/id_rsa
+```
+
+## Configuration SSH
+Bien penser à enlever le commentaire de la ligne 45
+```bash
+sudo vi /etc/ssh/sshd_config
+#PubkeyAuthentication yes
+-> PubkeyAuthentication yes
+```
+Redémarrer le service SSH
+```bash
+sudo systemctl restart sshd
+```

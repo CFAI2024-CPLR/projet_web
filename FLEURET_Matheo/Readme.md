@@ -24,7 +24,7 @@
         root : root
         mfleuret : mfleuret
       - partitionnement des disque
-      ![alt text](image.png)
+      ![ipv6](image.png)
       - installation des logiciel : 
         uniquement les utilitaire
       

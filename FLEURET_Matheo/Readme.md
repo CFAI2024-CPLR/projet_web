@@ -5,7 +5,7 @@
 
 ## Journal des activités
 
-### Activité 1 : installation et configuration de la vm
+### installation et configuration de la vm
 - **Temps de réalisation :** 50 minutes
 - **Travaux réalisés :** 
    - configuration de la vm  : 
@@ -24,7 +24,7 @@
         root : root
         mfleuret : mfleuret
       - partitionnement des disque
-      ![ipv6](image.png)
+      ![alt text](image.png)
       - installation des logiciel : 
         uniquement les utilitaire
       
@@ -34,14 +34,56 @@
 ### Activité 2 : configuration du reseaux ipv6
 - **Temps de réalisation :** 10 min
 - **Travaux réalisés :** 
-   - configuration de l'ipv6
-   .![alt text](image.png)
+   - Déterminer l'adresse IPv6 SLAAC
+  - Choix d'une adresse IPv6 fixe pour les sites web
+  - Paramètrage des adresses IPv6 fixes
+  - Configuration du réseau
+   ![alt text](\configuration\network.png)
+- **Commit :** [Lien du commit](URL_DU_COMMIT)
+
+
+### Activité 3 : installation et configuration de ssh 
+- **Temps de réalisation :** 30 min
+- **Travaux réalisés :** 
+  - Interdiction de la connexion en SSH via l'utilisateur root
+  - Autorisation de la connexion SSH uniquement depuis l'adresse IPv6 2A03:5840:111:1024:bc26:11ff:fe5a:3adf
+  ![alt text](ssh.png)
+
+## Activité 4 : creation des utilisateur et groupe  
+- **Temps de réalisation :** 30 min
+- **Travaux réalisés :** 
+
+  - Création du groupe clpr
+  - Création du groupe vitrine
+  - Création du groupe gestion
+  
+
+  - Création du compte webmaster
+  - Création du compte egeorge
+  - Création du compte wbreland
+  ![alt text](image.png)
+
+  - Attribution des groupes
+  
+  ![alt text](image-1.png)
+
+  
+   
 - **Commit :** [Lien du commit](URL_DU_COMMIT)
 - **Lien vers le fichier de configuration final :** [Nom du fichier](URL_DU_FICHIER)
 
+## Activité 5 : Installation des Logiciels et Services
+- **Temps de réalisation :** 30 min
+- **Travaux réalisés :** 
+
+  
+   
+- **Commit :** [Lien du commit](URL_DU_COMMIT)
+- **Lien vers le fichier de configuration final :** [Nom du fichier](URL_DU_FICHIER)
 ## Informations utilisateurs
 
 Pour chaque utilisateur, les informations suivantes sont fournies à l'exception de celles de l'utilisateur principal.
+
 
 **root**
 - **Login :** root
@@ -51,14 +93,14 @@ Pour chaque utilisateur, les informations suivantes sont fournies à l'exception
 - **Login :** mfleuret  
 - **Mot de passe :** mfleuret
 
-**Utilisateur root**
-- **Login :** root
-- **Mot de passe :** rootpassword
+**webmaster**
+- **Login :** webmaster  
+- **Mot de passe :** webmaster
 
-## Configuration SSH
+**wbreland**
+- **Login :** wbreland  
+- **Mot de passe :** wbreland
 
-```ssh
-Host exemple-vm
-  HostName exemple-vm.fqdn.com
-  User user1
-  IdentityFile ~/.ssh/id_rsa_user1
+**webmaster**
+- **Login :** egeorge  
+- **Mot de passe :** egeorge

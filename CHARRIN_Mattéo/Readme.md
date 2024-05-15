@@ -57,7 +57,7 @@ sudo nmcli con up ens18
 ```
 ## 4) Création des Groupes et affectation au dossier 30min 
 
-On va avoir besoin de nginx pour faire les groupes donc on va directement installer le paquet 
+On va avoir besoin de Nginx pour faire les groupes donc on va directement installer le paquet 
 ```shell 
 sudo dnf install nginx
 ```
@@ -93,7 +93,7 @@ sudo usermod -aG gestion mcharrin
 sudo usermod -aG gestion bcramer
 ```
 
-Ensuite on crée les différents sous-dossier de websites 
+Ensuite on crée les différents sous-dossier de website
 ```shell
 sudo mkdir -p /websites/vitrine /websites/gestion
 ```
@@ -124,3 +124,43 @@ On fait sa pour les 3 Nom / Ipv6 :
 - [product-metrics.vm.cfai24.ajformation.fr](http://product-metrics.vm.cfai24.ajformation.fr/)
 - [http://product-metrics.web.cfai24.ajformation.fr](http://product-metrics.web.cfai24.ajformation.fr/)
 - [http://product-metrics.admin.cfai24.ajformation.fr](http://product-metrics.admin.cfai24.ajformation.fr/)
+
+## 6) Ajout des différentes outils demander 
+
+### Install des outils de développement pour Rocky Linux 
+
+```shell 
+sudo dnf groupinstall "Development Tools" "RPM Development Tools"
+```
+
+### On va aussi installer SSH 
+
+```shell
+sudo dnf install openssh-server
+```
+
+### SNMP serveur 
+
+```shell
+sudo dnf install net-snmp net-snmp-utils`
+```
+
+### Mysql 
+
+```shell
+sudo dnf install mysql-server
+```
+
+### PHP 
+```shell 
+sudo dnf install php php-cli php-common php-mysqlnd
+```
+
+Et on fini par lancer toutes les outils 
+
+```shell 
+systemctl start sshd
+systemctl start snmpd
+systemctl start mysqld
+systemctl start nginx
+```

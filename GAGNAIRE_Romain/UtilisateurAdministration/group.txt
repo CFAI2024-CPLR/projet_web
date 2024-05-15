@@ -41,3 +41,8 @@ rgagnaire:x:1000:
 webmaster:x:1001:
 mshelton:x:1002:
 ecooper:x:1003:
+clpr:x:1004:apache
+vitrine:x:1005:webmaster,rgagnaire,mshelton
+gestion:x:1006:webmaster,rgagnaire,ecooper
+apache:x:48:
+nginx:x:991:

@@ -92,3 +92,42 @@
 * Difficultés rencontrées :
     - Comprendre comment configurer Apache2. C'était une première et a nécessité du temps et de l'aide.
     - Comprendre pourquoi les acl étaient problématiques.
+
+## Mise en place des sites
+### Site de gestion : SuiteCRM
+* Temps de réalisation : 4h
+* Travaux effectués :
+    - Installation du [site de gestion](http://chief-platform.admin.cfai24.ajformation.fr/)
+    - Création de la base de données
+    - [Configuration du site de gestion](https://github.com/CFAI2024-CPLR/projet_web/commit/40153603efc7cc78ddb30d080d765ef54082cc27)
+* Obstacles rencontrés :
+    - Absence de fichier de configuration config.php car le fichier est généré lors de l'installation.
+    - l'API graphQL est inaccessible à cause d'un token invalide
+    ![invalid_token](images/invalid_token.png)
+#### Tentative de résolution :
+- Création d'un fichier config.php contenant les lignes suivantes :
+```bash
+'host_name' => 'chief-platform.admin.cfai24.ajformation.fr',
+'site_url' => 'http://chief-platform.admin.cfai24.ajformation.fr',
+```
+- Ajout des règles suivantes dans le fichier gestion.conf :
+```bash
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, DELETE, PUT"
+Header set Access-Control-Allow-Headers "Content-Type, X-Requested-With"
+```
+- Modification des valeurs suivantes dans le [php.ini](https://github.com/CFAI2024-CPLR/projet_web/commit/74b26344e2237659190fd71477574709a269c8f8) :
+```bash
+session.use_strict_mode = 1
+session.cookie_httponly = 1
+session.cookie_secure = 0   ; Mettez à 1 si vous utilisez HTTPS
+session.use_cookies = 1
+session.use_only_cookies = 1
+```
+Malgré tout cela, le problème persiste.
+[Extrait de logs](https://github.com/CFAI2024-CPLR/projet_web/commit/d320e8ba06856bf6c89a4c1bf1f09af184adb308)
+
+#### Difficultés rencontrées :
+- Originellement, c'était le CRM Vtiger qui aurait dû être utilisé mais ce dernier renvoyait une *invalid request*. Après vérification de la version de PHP (Vtiger ne supporte qu'à minima PHP 8.1), vérification des droits, re téléchargement et réinstallation de Vtiger, le problème persistait. Sur conseil du formateur, il a été décidé de tenter avec SuiteCRM.
+- Comme mentionné plus haut, même avec SuiteCRM j'ai rencontré des difficultés. Malgré l'aide d'un camarade nous ne sommes pas parvenu à l'installer et le configurer.
+- Étant débutante, il m'a été très difficile de me repérer dans cet exercice.

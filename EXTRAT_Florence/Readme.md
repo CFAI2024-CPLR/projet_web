@@ -76,3 +76,19 @@
 * Temps de réalisation : 10 minutes
 * Travaux effectués :
     - Accorder les droits adaptés aux dossiers **/websites**, **/websites/vitrine**, **websites/gestion**
+
+## Configuration globale Apache2
+* Temps de réalisation : 45 minutes
+* Travaux effectués :
+    - Dans le fichier de configuration [httpd.conf](https://github.com/CFAI2024-CPLR/projet_web/commit/0097419181de5f40d45e3f0f48df41ad11c63cca)
+        - Ecouter sur l'adresse IP fixe
+        - Renseigner l'utilisateur et le groupe dédié pour exécuter httpd
+    - Changer les droits de [php-fpm](https://github.com/CFAI2024-CPLR/projet_web/commit/f45c9f0ea221e4d6ce7f4f9c3d0c4f34e51e8cb6)
+        - ```bash
+            listen.owner = webmaster
+            listen.group = clpr
+            listen.mode = 0660
+        - Commenter la ligne concernant les acl
+* Difficultés rencontrées :
+    - Comprendre comment configurer Apache2. C'était une première et a nécessité du temps et de l'aide.
+    - Comprendre pourquoi les acl étaient problématiques.

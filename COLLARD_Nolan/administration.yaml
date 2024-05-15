@@ -5,24 +5,24 @@ machine:
   fqdn: national-model.vm.cfai24.ajformation.fr
 utilisateurs:
   - login: webmaster
-    passwd: test
+    passwd: Prnd4%vd7
   - login: root
     passwd: Kbdi4Z3!Shz49m8P
   - login : rferretti
-    passwd : test
+    passwd : Xv85-Mgm4k
   - login : cyerger
-    passwd : test
+    passwd : Zhdf78/S*v
 services:
     - name: ssh
-      version: ...
+      version: 9.2.1
     - name : mysql
-      version : ...
+      version : 8.0.35
     - name : apache2
-      version : ...
+      version : 2.4.57
     - name : snmp
-      version : ...
-    - name : php-fmp
-      version : ...
+      version : 5.9.3
+    - name : php
+      version : 8.2.7
 sites_web:
     - type: vitrine
       chemin: /websites/vitrine/

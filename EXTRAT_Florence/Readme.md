@@ -20,3 +20,9 @@
     - Test de la seconde IPv6 avec **nmap**
     - Ajout de la seconde IPv6 à la carte réseau
     - Redémarrage du service réseau
+
+## Configuration du serveur SSH
+* Temps de réalisation : 15 minutes
+* Travaux : 
+    - Installation du serveur SSH avec : ```bash dnf install openssl-server```
+    - Configuration SSH : [Commit de la configuration SSH](https://github.com/CFAI2024-CPLR/projet_web/commit/cd0113d161b13c601ffe34469f758456fede8d4a)

@@ -145,3 +145,25 @@ Malgré tout cela, le problème persiste.
     - Créer le vhost [vitrine.conf](https://github.com/CFAI2024-CPLR/projet_web/commit/7e7411e8b3b3573f549db9fa0eaacbf007334352)
     - Redémarrer le httpd
 
+## Utilisateurs
+### Informations utilisateurs
+|Utilisateur|Login|Password|
+| :---: | :---: | :---: |
+|root|root|Chaton6666|
+|webmaster|webmaster|Uu1cheir|
+|John Gaytan|jgaytan|ouh4Ooc1|
+|Jim Frankhouser|jfrankhouser|Joo6ahJo|
+
+### Configuration SSH
+#### Fichier de configuration
+```bash
+Host chief-platform
+    HostName chief-platform.vm.cfai24.ajformation.fr
+    User jgaytan
+```
+**Attention** : Il faut penser à adapter l'utilisateur dans le fichier de configuration.
+
+#### Commande de connexion :
+```bash
+ssh  chief-platform
+```

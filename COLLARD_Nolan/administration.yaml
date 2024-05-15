@@ -1,0 +1,36 @@
+administrateur: 
+  identite: Nolan Collard
+  login: ncollard
+machine:
+  fqdn: national-model.vm.cfai24.ajformation.fr
+utilisateurs:
+  - login: webmaster
+    passwd: test
+  - login: root
+    passwd: Kbdi4Z3!Shz49m8P
+  - login : rferretti
+    passwd : test
+  - login : cyerger
+    passwd : test
+services:
+    - name: ssh
+      version: ...
+    - name : mysql
+      version : ...
+    - name : apache2
+      version : ...
+    - name : snmp
+      version : ...
+    - name : php-fmp
+      version : ...
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://...
+      login: [si besoin]
+      password: [si besoin]
+    - type: gestion
+      chemin: /websites/vitrine/
+      url: http://...
+      login: ...
+      ...

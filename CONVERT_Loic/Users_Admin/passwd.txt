@@ -22,3 +22,5 @@ lconvert:x:1000:1000:lconvert:/home/lconvert:/bin/bash
 webmaster:x:1001:1001::/home/webmaster:/bin/bash
 dkee:x:1002:1002:Donovan Kee:/home/dkee:/bin/bash
 wtownsend:x:1003:1003:Willis Townsend:/home/wtownsend:/bin/bash
+nginx:x:991:991:Nginx web server:/var/lib/nginx:/sbin/nologin
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin

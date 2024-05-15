@@ -1,0 +1,6 @@
+```bash
+baseURL = 'http://http://chief-platform.web.cfai24.ajformation.fr/'
+languageCode = 'en-us'
+title = 'Chief-platform'
+theme = "PaperMod"
+```

@@ -22,3 +22,5 @@ rgagnaire:x:1000:1000:rgagnaire:/home/rgagnaire:/bin/bash
 webmaster:x:1001:1001::/home/webmaster:/bin/bash
 mshelton:x:1002:1002:Marian Shelton:/home/mshelton:/bin/bash
 ecooper:x:1003:1003:Evelyn Cooper:/home/ecooper:/bin/bash
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+nginx:x:991:991:Nginx web server:/var/lib/nginx:/sbin/nologin

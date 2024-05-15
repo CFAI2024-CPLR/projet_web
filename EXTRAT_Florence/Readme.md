@@ -71,3 +71,8 @@
 * Difficultés rencontrées :
     - Il a fallu chercher comment installer une version de php supérieure à la 8.0 dans le but d'utiliser le CRM Vtiger par la suite.
     - Modifier les règles de pare-feu.
+
+## Configuration des droits des dossiers
+* Temps de réalisation : 10 minutes
+* Travaux effectués :
+    - Accorder les droits adaptés aux dossiers **/websites**, **/websites/vitrine**, **websites/gestion**

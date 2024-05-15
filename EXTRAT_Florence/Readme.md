@@ -131,3 +131,17 @@ Malgré tout cela, le problème persiste.
 - Originellement, c'était le CRM Vtiger qui aurait dû être utilisé mais ce dernier renvoyait une *invalid request*. Après vérification de la version de PHP (Vtiger ne supporte qu'à minima PHP 8.1), vérification des droits, re téléchargement et réinstallation de Vtiger, le problème persistait. Sur conseil du formateur, il a été décidé de tenter avec SuiteCRM.
 - Comme mentionné plus haut, même avec SuiteCRM j'ai rencontré des difficultés. Malgré l'aide d'un camarade nous ne sommes pas parvenu à l'installer et le configurer.
 - Étant débutante, il m'a été très difficile de me repérer dans cet exercice.
+
+### Site Vitrine : GoHugo
+* Temps de réalisation : 1 heure 15 minutes
+* Travaux effectués :
+    - Installation du [site vitrine](http://chief-platform.web.cfai24.ajformation.fr/)
+    - Créer un nouveau site avec la commande : ```bash hugo new site /website/vitrine/```
+    - Ajouter un thème :
+        - Clôner le répertoire d'un thème (ici Papermod)
+        - Éditer le fichier [hugo.toml](https://github.com/CFAI2024-CPLR/projet_web/commit/8897cb2de38541f691753cc5922204c7cf394824)
+        - Créer un nouveau post
+    - Appliquer les droits : ```bash chown -R webmaster:vitrine /websites/vitrine```
+    - Créer le vhost [vitrine.conf](https://github.com/CFAI2024-CPLR/projet_web/commit/7e7411e8b3b3573f549db9fa0eaacbf007334352)
+    - Redémarrer le httpd
+

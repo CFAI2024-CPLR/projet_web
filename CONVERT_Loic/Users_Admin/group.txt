@@ -41,3 +41,8 @@ lconvert:x:1000:
 webmaster:x:1001:
 dkee:x:1002:
 wtownsend:x:1003:
+clpr:x:1004:nginx
+vitrine:x:1005:webmaster,lconvert,dkee
+gestion:x:1006:webmaster,lconvert,wtownsend
+nginx:x:991:
+apache:x:48:

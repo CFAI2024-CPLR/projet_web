@@ -45,3 +45,29 @@
     - Création des groupes
     - Création des utilisateurs
     - Affilier les utilisateurs aux groupes correspondants
+
+## Installation des logiciels et services
+* Temps de réalisation : 45 minutes
+* Travaux réalisés :
+    - Installation des paquets suivant avec la commande : ```bash dnf install gcc make net-snmp net-snmp-utils httpd mysql mysql-server```
+        - **gcc** : compilateur GNU
+        - **make** : utilitaire de build
+        - **net-snmp** et **net-snmp-utils** : service SNMP
+        - **httpd** : apache
+        - **mysql** : client MySQL
+        - **mysql-server** : serveur MySQL
+    - Installation de PHP 8.1 :
+    ```bash
+    dnf install epel-release
+    dnf install http://rpms.remirepo.net/enterprise/remi-release-9.rpm
+    dnf install dnf-utils
+    dnf module reset php
+    dnf module install php:remi-8.1
+
+    Dnf install php php-cli php-common php-gd php-mbstring php-json php-xml php-mysqlnd php-zip php-intl php-soap php-ldap php-bcmath php-imap
+    ```
+    - Autorisation de pare feu
+
+* Difficultés rencontrées :
+    - Il a fallu chercher comment installer une version de php supérieure à la 8.0 dans le but d'utiliser le CRM Vtiger par la suite.
+    - Modifier les règles de pare-feu.

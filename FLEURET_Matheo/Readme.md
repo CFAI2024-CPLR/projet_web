@@ -67,15 +67,19 @@
   
   ![alt text](image-1.png)
 
+
   
    
 - **Commit :** [Lien du commit](URL_DU_COMMIT)
 - **Lien vers le fichier de configuration final :** [Nom du fichier](URL_DU_FICHIER)
 
-## Activité 5 : Installation des Logiciels et Services
+## Activité 6 : installation des outils et service
 - **Temps de réalisation :** 30 min
 - **Travaux réalisés :** 
-
+Installation de PHP
+Installation de SNMP Serveur
+Installation de GCC
+Installation de Make
   
    
 - **Commit :** [Lien du commit](URL_DU_COMMIT)

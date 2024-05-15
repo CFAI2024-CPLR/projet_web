@@ -38,3 +38,10 @@
 |chief-platform.vm.cfai24.ajformation.fr.|2a03:5840:111:1024:be24:11ff:feb9:5e8b|
 |chief-platform.web.cfai24.ajformation.fr.|2a03:5840:111:1024::11|
 |chief-platform.admin.cfai24.ajformation.fr.|2a03:5840:111:1024::11|
+
+## Création et configuration des utilisateurs et groupes
+* Temps de réalisation : 10 minutes
+* Travaux : 
+    - Création des groupes
+    - Création des utilisateurs
+    - Affilier les utilisateurs aux groupes correspondants

@@ -1,0 +1,38 @@
+administrateur: 
+  identite: Florence Extrat
+  login: fextrat
+machine:
+  fqdn: [chief-platform.vm.cfai24.ajformation.fr]
+utilisateurs:
+  - login: webmaster
+    passwd: Uu1cheir
+  - login: root
+    passwd: Chaton6666
+  - login: jgaytan
+    passwd: ouh4Ooc1
+  - login: jfrankhouser
+    passwd: Joo6ahJo
+services:
+    - name: openSSH
+      version: 8.7p1
+    - name: gcc
+      version: 11.4.1
+    - name: httpd
+      version: 2.4.57
+    - name: make
+      version: 4.3
+    - name: mysql
+      version: 8.0.36
+    - name: mysql-server
+      version: 8.0.36
+    - name: net-snmp
+      version: 5.9.1
+    - name: php
+      version: 8.1.28
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://chief-platform.web.cfai24.ajformation.fr
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://chief-platform.admin.cfai24.ajformation.fr

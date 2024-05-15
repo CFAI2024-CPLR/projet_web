@@ -60,6 +60,13 @@ Travaux effectués :
 - installation des paquets (php, mysql, apache, make, gcc, snmp serveur, serveur ssh)
 - installation des outils ( jekyll, espocrm)
 
+## Enregistrement des FQDN
+Temps de réalisation : 1h
+
+accès ssh : national-model.vm.cfai24.ajformation.fr. -> 2a03:5840:111:1024:be24:11ff:fea9:df45
+site vitrine : national-model.web.cfai24.ajformation.fr. -> 2a03:5840:111:1024::31
+site gestion : national-model.admin.cfai24.ajformation.fr -> 2a03:5840:111:1024::31
+
 # Utilisateurs
 ## Root
 - login : root

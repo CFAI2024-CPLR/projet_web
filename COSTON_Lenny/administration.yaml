@@ -31,6 +31,8 @@ sites_web:
     - type: gestion
       chemin: /websites/gestion/
       url: http://district-ownership.admin.cfai24.ajformation.fr/
+      login: [admin]
+      password: [Az9TUDUaJNU0KYxuyfbC]
     - type: vitrine
       chemin: /websites/vitrine/
       url: http://district-ownership.web.cfai24.ajformation.fr

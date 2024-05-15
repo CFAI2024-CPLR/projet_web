@@ -47,11 +47,16 @@ Temps de réalisation: 1H00
 
 Travaux réalisés:
 - [Configuration Vhost](#configuration-vhost)
-- [Vtiger](#vtiger)
-      - [Configuration Vhost du site gestion](#configuration-vhost-du-site-gestion)
-      - [Configuration socket PHP](#configuration-socket-php)
+- [Vtiger](#vtiger) :warning: Site non fonctionnel avec la version PHP demandé, voir la parti [SUITE](#suite)
+    - [Configuration Vhost du site gestion](#configuration-vhost-du-site-gestion)
+    - [Configuration socket PHP](#configuration-socket-php)
 - [HUGO](#hugo)
-      - [Configuration Vhost du site vitrine](#configuration-vhost-du-site-vitrine)
+    - [Configuration Vhost du site vitrine](#configuration-vhost-du-site-vitrine)
+- [Suite](#suite)
+    - [Configuration du Vhost du site gestion SUITE](#configuration-vhost-du-site-gestion-suite)
+    - [Configuration socket PHP SUITE](#configuration-socket-php-de-suite)
+    - [Changer droits répertoire php](#changer-les-droit-répertoire-php)
+    - [Création et configuration de la BDD SUITE](#creation-et-configuration-de-la-bdd-suite)
 - [Selinux permissive](#selinux)
 - [Firewalld](#ouverture-des-ports)
 
@@ -64,6 +69,15 @@ Travaux réalisés:
 |Gabe Newell| webmaster | 3gecHc917RAFeFUOROXI |
 | Margaret Unga | munga | zeKqumwH81UblPPK3Smz |
 | Mildred Kasack | mkasack | LBhsF51N4kOBeM9OfLUb |
+
+# Enregistrement DNS
+## Informations
+| FQDN |Adresse IPv6| Utilisation|
+| :---: | :---: |  :---: |
+|district-ownership.vm.cfai24.ajformation.fr.|  2a03:5840:111:1024:be24:11ff:fed6:e28b | Accès SSH 
+|district-ownership.web.cfai24.ajformation.fr.| 2a03:5840:111:1024::9 | Site web vitrine
+|district-ownership.admin.cfai24.ajformation.fr.| 2a03:5840:111:1024::9 | Site web de gestion
+
 
 
 ##  Création VM RockyLinux 9.3 sur l'hyperviseur Proxmox
@@ -408,6 +422,79 @@ sudo vi vitrine.conf
 
 
 sudo ln -s /etc/httpd/sites-available/vitrine.conf /etc/httpd/sites-enabled/vitrine.conf
+```
+
+## SUITE
+
+### Configuration Vhost du site gestion SUITE
+```bash
+cd /etc/httpd/sites-available
+sudo rm -rf gestion.conf
+sudo touch gestion.conf
+sudo vi gestion.conf
+
+<VirtualHost *:80>
+    ServerName district-ownership.admin.cfai24.ajformation.fr
+    DocumentRoot /websites/gestion/public
+
+    ErrorLog /var/log/httpd/gestion_error.log
+    CustomLog /var/log/httpd/gestion_access.log combined
+
+    <Directory "/websites/gestion/public">
+        AllowOverride All
+        Require all granted
+    </Directory>
+    <FilesMatch \.php$>
+       SetHandler "proxy:unix:/run/php-fpm/suite.sock|fcgi://localhost/"
+    </FilesMatch>
+
+</VirtualHost>
+
+sudo ln -s /etc/httpd/sites-available/gestion.conf /etc/httpd/sites-enabled/gestion.conf
+```
+### Configuration socket PHP de SUITE
+```bash
+cd /etc/php-fpm.d/
+sudo rm -rf vtiger.conf
+sudo mkdir suite.conf
+
+[source]
+user = webmaster
+group = gestion
+listen = /run/php-fpm/suite.sock
+listen.owner = webmaster
+listen.group = gestion
+listen.mode = 0775
+
+pm = dynamic
+pm.max_children = 50
+pm.start_servers = 5
+pm.min_spare_servers = 5
+pm.max_spare_servers = 35
+
+php_admin_value[error_log] = /var/log/php-fpm/vtiger-error.log
+php_admin_flag[log_errors] = on
+php_value[session.save_handler] = files
+php_value[session.save_path]    = /var/lib/php/session
+
+sudo rm -rf /run/php-fpm/vtiger.sock
+```
+
+### Changer les droit répertoire PHP
+```bash
+cd /var/lib/php/
+sudo chown -R webmaster:gestion session/
+```
+### Creation et configuration de la BDD suite
+```bash
+mysql -u root -p
+```
+```sql
+CREATE DATABASE suitecrm_db;
+CREATE USER 'suitecrm_user'@'localhost' IDENTIFIED BY 'votre_mot_de_passe';
+GRANT ALL PRIVILEGES ON suitecrm_db.* TO 'suitecrm_user'@'localhost';
+FLUSH PRIVILEGES;
+exit;
 ```
 ## Ouverture des ports
 

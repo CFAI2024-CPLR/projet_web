@@ -20,19 +20,26 @@
             }
           },
           {
+            "id": "2ba061585e669622",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/5/Arc_gEi3nsWKhJ.png"
+              }
+            }
+          },
+          {
             "id": "950cb1f4926b63db",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Readme.md",
-                "mode": "source",
-                "source": false
+                "file": "Images/5/Arc_gEi3nsWKhJ.png"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -159,20 +166,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "950cb1f4926b63db",
+  "active": "a385b4a7f4dd716b",
   "lastOpenFiles": [
+    "Images/5/Arc_gEi3nsWKhJ.png",
+    "Readme.md",
+    "Images/5",
+    "Images/2/Arc_2zxbuFqZNH.png",
     "Images/2/Arc_t49Q38G2X7.png",
     "Images/2/Arc_vtgQ0YEurM.png",
-    "Readme.md",
     "Images/2/Arc_UPMaxMWwzL.png",
-    "Images/2/Arc_2zxbuFqZNH.png",
     "Images/2",
     "Images/1/Arc_6RekT5Xylv.png",
     "Images/1/Arc_s9rQnovz9u.png",
     "Images/1/Arc_s3O9UWUV9a.png",
     "Images/1/Arc_jqD8nDkWbN.png",
     "Images/1/Arc_E2CTxJ23oE.png",
-    "Images/1/Arc_WYLzmLm0mR.png",
     "Images/1",
     "Images",
     "administration.yaml",

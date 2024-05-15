@@ -100,8 +100,27 @@ sudo mkdir -p /websites/vitrine /websites/gestion
 
 Et on viens ajouter les propriétaires et groupes a ces dossier 
 ```shell
-sudo chown apache:nginx /websites
+sudo chown apache:cplr /websites
 sudo chown webmaster:vitrine /websites/vitrine
 sudo chown webmaster:gestion /websites/gestion
 ```
 
+puis on corrige les droit avec chmod 
+
+```shell 
+chmod 775 /websites
+chmod 775 /websites/vitrine
+chmod 775 /websites/gestion
+```
+
+
+## 5) Enregistrement DNS 
+
+On suit les instruction disposer sur le site :  http://ns1.cfai2024.ajformation.fr:5000/
+
+![](Images/5/Arc_gEi3nsWKhJ.png)
+
+On fait sa pour les 3 Nom / Ipv6 : 
+- [product-metrics.vm.cfai24.ajformation.fr](http://product-metrics.vm.cfai24.ajformation.fr/)
+- [http://product-metrics.web.cfai24.ajformation.fr](http://product-metrics.web.cfai24.ajformation.fr/)
+- [http://product-metrics.admin.cfai24.ajformation.fr](http://product-metrics.admin.cfai24.ajformation.fr/)

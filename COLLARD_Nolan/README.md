@@ -67,12 +67,12 @@ Travaux effectués :
 
 ## Webmaster
 - login : webmaster
-- mdp : test
+- mdp : Prnd4%vd7
 
 ## Rachel Ferretti
 - login : rferretti
-- mdp : test
+- mdp : Xv85-Mgm4k
 
 ## Corey Yerger
 - login : cyerger
-- mdp : test
+- mdp : Zhdf78/S*v

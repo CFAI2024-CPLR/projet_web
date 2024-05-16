@@ -26,9 +26,9 @@
 ![image](./images/rockyinstall.jpg)
 
  
-# Activité 2 : Configuration du réseau
+# Activité 2 : Configuration du réseau (temps total additionné 40min)
 
-## Ajout de l'ipv6 manuelle 
+## Ajout de l'ipv6 manuelle (temps passé 30min)
 - Récupérer l'ipv6 automatique (2a03:5840:111:1024:be24:11ff:fe6d:f34a)
 - Sur Rocky utiliser le CLI NetworkManager pour ajouter l'ip
     - 2a03:5840:111:1024::8/64
@@ -53,12 +53,12 @@ quit
 - Redémarrer le service NetworkManager (sudo systemctl restart NetworkManager)
 - Vérifier le résultat avec "ip -6 addr show"
 
-## Ajout dans le DNS
+## Ajout dans le DNS (temps passé 10min)
 - Suivre les instructions du site "http://ns1.cfai2024.ajformation.fr:5000"
 
 ![image](./images/DNS.jpg)
 
-# Activité 3 : Configuration des utilisateurs et des groupes
+# Activité 3 : Configuration des utilisateurs et des groupes (temps passé 30min)
 - Répéter l'opération suivante pour tous les utilisateurs à créer :
 
 ```
@@ -82,7 +82,7 @@ usermod -aG gestion mbureau
 usermod -aG gestion rwarner
 ```
 
-# Activité 4 : Gestion de la hiérarchie des dossiers
+# Activité 4 : Gestion de la hiérarchie des dossiers (temps passé 30min)
 - Effectuer les commandes suivantes : 
 ```
 mkdir -p /websites/vitrine
@@ -104,7 +104,7 @@ sudo chmod -R 775 /websites
 
 - les utilisateurs sont créés, les dossiers aussi, les autorisations sont en place et les groupes aussi. Il va maintenant falloir passer à l'installation de pico cms et YetiForce ainsi qu'à la configuration de nginx.
 
-# Activité 5 : Configuration des sites web
+# Activité 5 : Installation initiale des sites web (temps passé 10min)
 
 ## Pico CMS :
 - Effectuer les commandes suivantes : 
@@ -122,14 +122,14 @@ sudo curl -LO https://github.com/YetiForceCompany/YetiForceCRM/releases/download
 sudo unzip YetiForceCRM-6.4.0-complete.zip
 ```
 
-# Activité 6 : configuration de nginx
+# Activité 6 : configuration de nginx (temps passé 4h)
 
 ## Création des fichiers de configuration :
 ```
 sudo nano /etc/nginx/conf.d/central-cowboy.web.conf
 
 server {
-    listen 80;
+    listen [::]:80;
     server_name central-cowboy.web.cfai24.ajformation.fr;
 
     root /websites/vitrine;
@@ -152,7 +152,7 @@ save & quit
 sudo nano /etc/nginx/conf.d/central-cowboy.admin.conf
 
 server {
-    listen 80;
+    listen [::]:80;
     server_name central-cowboy.admin.cfai24.ajformation.fr;
 
     root /websites/gestion;
@@ -197,3 +197,70 @@ curl -I http://central-cowboy.admin.cfai24.ajformation.fr
 - Après avoir essayé de couper le pare-feu rien n'a changé
 
 - L'erreur était due au fait que dans mes fichiers de configuration le paramètre "listen" était sur "80" et non pas sur "[::]:80" donc il n'écoutait pas en ipv6
+
+# Activité 7 : configuration des sites web (temps passé 5h)
+
+## Installation site vitrine (PicoCMS) et description des erreurs rencontrées : 
+- Tout d'abord erreur 500 liée à une erreur PHP sur les 2 sites web
+    - Installation du dépot remi-release-9 qui contient les anciennes versions de php :
+    ```
+    sudo dnf install epel-release
+    sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+
+    sudo dnf module list php
+    sudo dnf module reset php
+    sudo dnf module enable php:7.4
+
+    sudo dnf install php74 php74-php-fpm php74-php-cli php74-php-mysqlnd
+    ```
+    - configuration de nginx pour utiliser la version de php souhaitée
+    ```
+    server {
+    listen [::]:80;
+    server_name central-cowboy.web.cfai24.ajformation.fr;
+
+    root /websites/vitrine;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php74-php-fpm/www.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }}
+    ```
+    - Ceci a corrigé l'erreur 500 mais a provoqué une erreur "502 Bad Gateway" que j'ai corrigé en réinstallant pico via une installation avec composer et en gérant correctement ma socket php74 au lieu de la dernière version de php :
+    
+    ```
+    cd /websites/vitrine
+    # 2 extensions étaient manquantes je les ai donc téléchargées : 
+    sudo dnf install php74-php-xml
+    sudo dnf install php74-php-mbstring
+    sudo systemctl restart php74-php-fpm
+
+
+    curl -sSL https://getcomposer.org/installer | php74
+    php74 composer.phar create-project picocms/pico-composer pico
+    ```
+
+    - J'ai rencontré une erreur à nouveau liée  à ma socket php-fpm (en version 7.4 cette fois ci), je n'avais pas enable le service, ainsi lors de redémarrage de ma machine j'ai été confronté à un service éteint qui ne démarrait pas et un dossier inexistant :
+
+    ```
+    sudo mkdir -p /run/php74-php-fpm
+    sudo chown webmaster:webmaster /run/php74-php-fpm
+    sudo chmod 755 /run/php74-php-fpm
+
+    sudo systemctl restart php74-php-fpm
+    sudo systemctl restart nginx    
+    ```
+    
+    - Enfin il fallait modifier le paramètre "root" du fichier de conf du site vitrine côté nginx pour ajouter "/pico" à la la fin et le site web est disponible et configuré : 
+    ![image](./images/picohome.jpg)
+

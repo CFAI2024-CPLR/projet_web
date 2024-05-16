@@ -54,18 +54,34 @@ Travaux effectués :
 - ajout de la clé de Mr Avond aux utilisateurs
 
 ## Création des paquets et outils
-Temps de réalisation : 3h
+Temps de réalisation : 8h
 
 Travaux effectués :
 - installation des paquets (php, mysql, apache, make, gcc, snmp serveur, serveur ssh)
-- installation des outils ( jekyll, espocrm)
+- installation des outils ( jekyll, espocrm) FAILS : perte de paquet lors de l'installation + récuperation d'installation sur Github impossible puisque Github n'a pas d'IPV6. De plus, la VM ne cesse de mettre un temps de réponse assez énorme
 
 ## Enregistrement des FQDN
 Temps de réalisation : 1h
 
 accès ssh : national-model.vm.cfai24.ajformation.fr. -> 2a03:5840:111:1024:be24:11ff:fea9:df45
+
 site vitrine : national-model.web.cfai24.ajformation.fr. -> 2a03:5840:111:1024::31
+
 site gestion : national-model.admin.cfai24.ajformation.fr -> 2a03:5840:111:1024::31
+
+## Aborescence des fichiers de configuration
+
+- **network**
+<br>└── [/etc/network/interfaces]
+- **serveur_ssh**
+<br>└── [/etc/ssh/sshd_config]
+- **serveur_web**
+<br>├── **php-fpm**
+<br>│&nbsp;&nbsp;&nbsp;&nbsp;├── [/etc/php/8.2/fpm/php.ini]
+<br>│&nbsp;&nbsp;&nbsp;&nbsp;└── [/etc/php/8.2/fpm/pool.d/www.conf]
+<br>└── **sites**
+<br>&nbsp;&nbsp;&nbsp;&nbsp;├── *gestion*
+<br>&nbsp;&nbsp;&nbsp;&nbsp;└── *vitrine*
 
 # Utilisateurs
 ## Root

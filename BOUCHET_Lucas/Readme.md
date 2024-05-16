@@ -5,7 +5,10 @@
 
 ## Caractéristiques
 
+### Création de la VM
 
+Pour créer la machine virtuelle cela a été asse simple. Il suffisait de mettre les caractéristiques demandé dans le sujet.
+![Configuration_VM](https://github.com/CFAI2024-CPLR/projet_web/assets/92736112/efb100d0-09c1-4c9f-9a64-2f89793b7262)
 
 ## Réseaux
 

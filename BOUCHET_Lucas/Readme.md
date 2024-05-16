@@ -46,6 +46,9 @@ J'ai résolu le problème à cause d'une phrase que j'avais commenté dans l'int
 
 ## Hiérarchie des dossiers
 
+La création de l'arborescence à été faite en suivant les demandes dans le sujet.
+
+![arborescence](https://github.com/CFAI2024-CPLR/projet_web/assets/92736112/7809cf9d-1ae8-41be-9598-a6aae2b5e464)
 
 * Temps de travail : 40 min
 * Travaux réalisés :
@@ -67,7 +70,7 @@ Les utilisateurs ont été créé avec chaque accès demandé afin qu'il puisse 
 
 ## Logiciels et services
 
-L'installation des paquets et outils ont été plus compliqué que prévu. Je n'arrivai pas à les intallés car mon debian ne trouvait pas les packets demandé. J'ai du trouver une solution afin de pouvoir les installer. j'avais mal configuré les répository, et donc le gestionaire de packet APT ne trouvais pas les packet car il n'avais pas de répository de configurer.
+L'installation des paquets et outils ont été plus compliqué que prévu. Je n'arrivai pas à les intaller car mon debian ne trouvait pas les packets demandé. J'ai du trouver une solution afin de pouvoir les installer. j'avais mal configuré les répository, et donc le gestionaire de packet APT ne trouvais pas les packet car il n'avais pas de répository de configurer.
 Je ne suis pas arriver à installer MySQL, j'ai du choisir une autre option. J'ai donc télécharger MariaDB qui fait exactement la même chose que MySQL.
 
 * Temps de travail : 2 heures et 30 min
@@ -92,7 +95,6 @@ Je ne suis pas arriver à installer MySQL, j'ai du choisir une autre option. J'a
 
 - **Login** : root
 - **MDP** : Nutell@Br3st
-- **SSH** : La connexion de root n'est pas autorisé
 
 ## Webmaster
 
@@ -108,3 +110,5 @@ Je ne suis pas arriver à installer MySQL, j'ai du choisir une autre option. J'a
 
 - **Login** : anance
 - **MDP** : Nutell@Br3st
+
+**SSH** : La connexion de root n'est pas autorisé

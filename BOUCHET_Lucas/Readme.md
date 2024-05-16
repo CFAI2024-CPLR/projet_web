@@ -3,6 +3,27 @@
 # Journal d'activités
 
 
+## Caractéristiques
+
+
+
+## Réseaux
+
+
+
+## Hiérarchie des dossiers
+
+
+
+## Utilisateurs et Administration
+
+
+
+## Logiciels et services
+
+
+
+## Sites web
 
 # Utilisateurs
 

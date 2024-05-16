@@ -1,0 +1,36 @@
+administrateur: 
+  identite: Loic Convert
+  login: lconvert
+machine:
+  fqdn: future-empowerment.vm.cfai24.ajformation.fr
+utilisateurs:
+  - login: webmaster
+    passwd: webmaster
+  - login: root
+    passwd: Banana2003!
+  - login: dkee
+    passwd: dkee
+  - login: wtownsend
+    passwd: wtownsend
+services:
+    - name: mysql-server
+    -version: 2.5.1
+    - name: net-snmp
+      version: 5.9.1
+    - name: nginx
+      version: 1.20.1
+    - name: make
+      version: 4.3
+    - name: gcc
+      version: 11.4.1
+    - name: php
+      version: 8.1.28
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://future-empowerment.web.cfai24.ajformation.fr
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://future-empowerment.admin.cfai24.ajformation.fr
+      login: lconvert
+      passwd: Banana2003!

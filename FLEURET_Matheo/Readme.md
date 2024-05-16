@@ -81,6 +81,14 @@ Installation de SNMP Serveur
 Installation de GCC
 Installation de Make
   
+
+## Activité 7 : configuration d' apache 
+- **Temps de réalisation :** 30 min
+- **Travaux réalisés :** 
+  - site vitrine :    /etc/apache2/sites-available/internal-linkage.web.cfai24.ajformation.fr.conf
+
+  - SITE de gestion :  /etc/apache2/sites-available/internal-linkage.admin.cfai24.ajformation.fr.conf
+
    
 - **Commit :** [Lien du commit](URL_DU_COMMIT)
 - **Lien vers le fichier de configuration final :** [Nom du fichier](URL_DU_FICHIER)

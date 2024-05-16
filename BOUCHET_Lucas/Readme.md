@@ -9,7 +9,7 @@
 
 Pour créer la machine virtuelle cela a été asse simple. Il suffisait de mettre les caractéristiques demandé dans le sujet.
 ![Configuration_VM](https://github.com/CFAI2024-CPLR/projet_web/assets/92736112/efb100d0-09c1-4c9f-9a64-2f89793b7262)
-* Temps de travail : 10 min
+* Temps de travail : 20 min
 * Travaux réalisés :
     - Création de la machine virtuelle
     - Ajout des ressources demandé
@@ -86,9 +86,12 @@ Je ne suis pas arriver à installer MySQL, j'ai du choisir une autre option. J'a
 
 
 
-* Temps de travail : 2 heurs
+* Temps de travail : 4 heures
 * Travaux réalisés :
-    - 
+    - Création du site vitrine
+    - Création du site gestion
+    - Configuration de nginx
+
 # Utilisateurs
 
 ## Root

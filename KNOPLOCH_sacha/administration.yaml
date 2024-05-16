@@ -32,7 +32,7 @@ sites_web:
       chemin: /websites/gestion/
       url: http://master-control.admin.cfai24.ajformation.fr/
       login: [admin]
-      password: [Az9TUDUaJNU0KYxuyfbC]
+      password: []
     - type: vitrine
       chemin: /websites/vitrine/
       url: http://master-control.web.cfai24.ajformation.fr

@@ -185,3 +185,15 @@ sudo systemctl restart nginx
 curl -I http://central-cowboy.web.cfai24.ajformation.fr
 curl -I http://central-cowboy.admin.cfai24.ajformation.fr
 ```
+
+- A ce moment j'ai commencé à rencontrer des erreurs innatendues, les deux liens me renvoient la page d'accueil nginx malgré ma configuration à priori correcte : 
+
+![image](./images/nginx.jpg)
+
+- Il a fallu modifier le fichier de conf de nginx pour modifier la racine et la passer à "/websistes"
+
+- Mais à ce moment malgré les droits réalisés sur les dossiers plus tôt les pages me renvoyaient "403 Forbidden" 
+
+- Après avoir essayé de couper le pare-feu rien n'a changé
+
+- L'erreur était due au fait que dans mes fichiers de configuration le paramètre "listen" était sur "80" et non pas sur "[::]:80" donc il n'écoutait pas en ipv6

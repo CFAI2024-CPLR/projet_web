@@ -68,12 +68,24 @@ Les utilisateurs ont été créé avec chaque accès demandé afin qu'il puisse 
 ## Logiciels et services
 
 L'installation des paquets et outils ont été plus compliqué que prévu. Je n'arrivai pas à les intallés car mon debian ne trouvait pas les packets demandé. J'ai du trouver une solution afin de pouvoir les installer. j'avais mal configuré les répository, et donc le gestionaire de packet APT ne trouvais pas les packet car il n'avais pas de répository de configurer.
+Je ne suis pas arriver à installer MySQL, j'ai du choisir une autre option. J'ai donc télécharger MariaDB qui fait exactement la même chose que MySQL.
+
+* Temps de travail : 2 heures et 30 min
+* Travaux réalisés :
+    - Installation Serveur SSH
+    - Installation GCC
+    - Installation SNMP Serveur
+    - Installation NGINX
+    - Installation MariaDB
+    - Installation PHP
+
+## Sites web
+
+
 
 * Temps de travail : 2 heurs
 * Travaux réalisés :
     - 
-## Sites web
-
 # Utilisateurs
 
 ## Root

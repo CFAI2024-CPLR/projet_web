@@ -67,3 +67,30 @@ Pour les sites web il faut installer les outils suivants :
 
 - site vitrine : Jekyllrb
 - site gestion : Espocrm
+
+## Installation de Jekyll
+
+Jekyll nécessite l'installation des éléments suivants :
+
+- Ruby 
+- RubyGemmes
+- GCC et Make
+
+![installer jekyll](https://github.com/CFAI2024-CPLR/projet_web/assets/154502835/7debc26d-b55d-41dd-b4b1-9dc942d00dd3)
+![installer rubygems](https://github.com/CFAI2024-CPLR/projet_web/assets/154502835/a0ab14f4-4fdc-4047-ae8a-f94452141983)
+
+Puis erreur lors de l'installation de jenkyll :
+![Capture d'écran 2024-05-16 161800](https://github.com/CFAI2024-CPLR/projet_web/assets/154502835/f6025155-2a5e-4ece-b4a3-1dba29077be9)
+
+tentative d'installation via un Github. Github inaccessible en IPV6 + VM qui mets énormément de temps à repondre
+
+Incapacité de créer le site :
+
+![image](https://github.com/CFAI2024-CPLR/projet_web/assets/154502835/e7eedf3c-8c01-4e60-a3cb-f31deb30d495)
+
+## Installation de Espocrm
+
+`wget https://github.com/espocrm/espocrm-installer/releases/latest/download/install.sh
+bash install.sh`
+
+Impossible de récuperer ceci. Github n'ayant pas d'IPV6.

@@ -130,6 +130,10 @@ La configuration de nginx pour vtiger : [vtiger nginx](https://github.com/CFAI20
 
 Et la configuration de vtiger : [vtiger config](https://github.com/CFAI2024-CPLR/projet_web/commit/842f0e663839bde7cf8f208266eaa91343649272)
 
+id de connexion à vtiger :
+user : admin
+passwd : Thomas009
+
 * Instllation de PicoCMS :
 
 Voici les commandes utilisées pour l'installation de PicoCMS :

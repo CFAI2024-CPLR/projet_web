@@ -1,0 +1,38 @@
+administrateur: 
+  identite: Knoploch Sacha
+  login: sknoploch
+machine:
+  fqdn: master-control.vm.cfai24.ajformation.fr
+utilisateurs:
+  - login: webmaster
+    passwd: cr4&9k3@B9%@
+  - login: root
+    passwd: Wxcvbn!123
+  - login: mratermann
+    passwd: 2&6%SZ7X*7s#
+  - login: igoodyear
+    passwd: @$#$W9me3t62
+services:
+   - name: openssh-server
+      version: 8.7pl
+    - name: httpd
+      version: 2.4.57
+    - name: net-snmp
+      version: 5.9.1
+    - name: mariadb-server
+      version: 10.5.22
+    - name: make
+      version: 4.3
+    - name: gcc
+      version: 11.4.1
+    - name: php
+      version: 8.1.28
+sites_web:
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://master-control.admin.cfai24.ajformation.fr/
+      login: [admin]
+      password: [Az9TUDUaJNU0KYxuyfbC]
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://master-control.web.cfai24.ajformation.fr

@@ -198,9 +198,9 @@ curl -I http://central-cowboy.admin.cfai24.ajformation.fr
 
 - L'erreur était due au fait que dans mes fichiers de configuration le paramètre "listen" était sur "80" et non pas sur "[::]:80" donc il n'écoutait pas en ipv6
 
-# Activité 7 : configuration des sites web (temps passé 5h)
+# Activité 7 : configuration des sites web (temps total additionné 8h)
 
-## Installation site vitrine (PicoCMS) et description des erreurs rencontrées : 
+## Installation site vitrine (PicoCMS) et description des erreurs rencontrées (temps passé 3h) : 
 - Tout d'abord erreur 500 liée à une erreur PHP sur les 2 sites web
     - Installation du dépot remi-release-9 qui contient les anciennes versions de php :
     ```
@@ -264,3 +264,125 @@ curl -I http://central-cowboy.admin.cfai24.ajformation.fr
     - Enfin il fallait modifier le paramètre "root" du fichier de conf du site vitrine côté nginx pour ajouter "/pico" à la la fin et le site web est disponible et configuré : 
     ![image](./images/picohome.jpg)
 
+## Installation site gestion (YetiForce) (temps passé 5h) : 
+- Création d'une socket php-fpm (7.4 aussi par chance)
+
+```
+sudo nano /etc/nginx/conf.d/central-cowboy.admin.conf
+
+server {
+    listen [::]:80;
+    server_name central-cowboy.admin.cfai24.ajformation.fr;
+
+    root /websites/gestion;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php74-php-fpm/gestion.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+
+sudo nano /run/php74-php-fpm/gestion.sock
+
+[gestion]
+user = webmaster
+group = webmaster
+
+listen = /run/php74-php-fpm/gestion.sock
+
+listen.owner = webmaster
+listen.group = webmaster
+listen.mode = 0755
+
+pm = dynamic
+pm.max_children = 50
+pm.start_servers = 5
+pm.min_spare_servers = 5
+pm.max_spare_servers = 35
+
+
+#installation des librairies PHP manquantes à Yeti Force
+sudo dnf install php74-php-imap
+sudo dnf install php74-php-gd
+sudo dnf install php74-php-zip
+sudo dnf install php74-php-soap
+
+
+sudo systemctl restart php74-php-fpm
+sudo systemctl restart nginx
+
+# création d'un service au démarrage pour créer automatiquement le dossier "/run/php74-php-fpm"
+sudo nano /etc/systemd/system/mkdir.service
+
+[Unit]
+Description=Créer un dossier au démarrage
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mkdir -p /run/php74-php-fpm
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl daemon-reload
+sudo systemctl enable mkdir.service
+sudo systemctl start mkdir.service
+
+# dans mysql :
+set global table_definition_cache = 4400
+
+SET GLOBAL innodb_large_prefix = OFF;
+
+SET GLOBAL innodb_large_prefix = ON;
+
+exit;
+```
+- 
+```
+sudo nano /etc/opt/remi/php74/php.ini
+
+; Désactiver display_errors
+display_errors = Off
+
+; Activer session.use_strict_mode
+session.use_strict_mode = 1
+
+; Désactiver session.use_trans_sid
+session.use_trans_sid = 0
+
+; Activer session.cookie_httponly
+session.cookie_httponly = 1
+
+; Activer session.use_only_cookies
+session.use_only_cookies = 1
+
+; Activer session.cookie_secure (nécessite HTTPS)
+session.cookie_secure = 1
+
+; Activer session.cookie_samesite
+session.cookie_samesite = Strict
+
+; Désactiver expose_php
+expose_php = Off
+
+; Activer disable_functions
+disable_functions = shell_exec,exec,system,passthru,popen
+
+; Désactiver allow_url_include
+allow_url_include = 0
+
+```
+
+
+- après avoir effectué tout cela j'ai accès au site YetiForce mais après avoir résolu tous les soucis indiqué par l'installeur, l'installation est en erreur malgré tout :
+![image](./images/yetierror.jpg)

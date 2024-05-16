@@ -1,0 +1,36 @@
+administrateur: 
+  identite: Titouan Bonnet Plomb
+  login: tbonnetplomb
+machine:
+  fqdn: [district-mindshare.vm.cfai24.ajformation.fr]
+utilisateurs:
+  - login: webmaster
+    passwd: webmaster42
+  - login: root
+    passwd: MichelE42210?
+  - login: vredmond
+    passwd: vredmond42
+  - login: ihervey
+    passwd: ihervey42
+services:
+    - name: ssh
+      version: 9.2p1
+    - name: gcc
+      version: 12.2.0
+    - name: gdb
+      version: 13.1
+    - name: make
+      version: 4.3
+    - name: snmp
+      version: 5.9.3
+    - name: mysql
+      version: 15.1
+    - name: php
+      version: 8.2.18
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://district-mindshare.web.cfai24.ajformation.fr
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://district-mindshare.admin.cfai24.ajformation.fr

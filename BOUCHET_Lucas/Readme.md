@@ -24,8 +24,10 @@ J'ai réinstallé l'OS une nouvelle fois avec les bonnes partitions.
 
 * Temps de travail : 2 heures
 * Travaux réalisés :
+    - intallation de l'OS
     - Renseigment des informations (Login/MDP/...)
     - Choix sur la conception de l'OS (Gnome/Serveur SSH/...)
+    - Partitionnement des diques
 
 ## Réseaux
 
@@ -38,23 +40,36 @@ J'ai résolu le problème à cause d'une phrase que j'avais commenté dans l'int
 
 * Temps de travail : 1 heures
 * Travaux réalisés :
-    - 
+    - Choisir l'adresse IPv6 pour les sites WEB
+    - Choisir l'adresse IPv6 pour le FQDN
+    - Mettre les IPv6 en static
+
 ## Hiérarchie des dossiers
 
 
-* Temps de travail : 10 min
+* Temps de travail : 40 min
 * Travaux réalisés :
-    - 
+  - Configuration de l'arborescence
+  - Création des dossiers (Vitrine/Gestion)
+  - Ajout des propriétés
+  - attribution des droits
+
 ## Utilisateurs et Administration
 
+Les utilisateurs ont été créé avec chaque accès demandé afin qu'il puisse allé dans les dossiers autorisé avec leurs groupes associés.
 
-* Temps de travail : 10 min
+* Temps de travail : 1 heure et 30 min
 * Travaux réalisés :
-    - 
+    - Création des groupes (CLPR/Vitrine/Gestion)
+    - Création des comptes utilisateurs (Webmaster/Dherring/Anance)
+    - Ajout des groupes
+    - Ajout des clé SSH
+
 ## Logiciels et services
 
+L'installation des paquets et outils ont été plus compliqué que prévu. Je n'arrivai pas à les intallés car mon debian ne trouvait pas les packets demandé. J'ai du trouver une solution afin de pouvoir les installer. j'avais mal configuré les répository, et donc le gestionaire de packet APT ne trouvais pas les packet car il n'avais pas de répository de configurer.
 
-* Temps de travail : 10 min
+* Temps de travail : 2 heurs
 * Travaux réalisés :
     - 
 ## Sites web

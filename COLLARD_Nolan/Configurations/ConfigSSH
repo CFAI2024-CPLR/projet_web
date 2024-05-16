@@ -40,7 +40,7 @@ ListenAddress 2a03:5840:111:1024:be24:11ff:fea9:df45
 #PubkeyAuthentication yes
 
 # Expect .ssh/authorized_keys2 to be disregarded by default in future.
-#AuthorizedKeysFile     .ssh/authorized_keys .ssh/authorized_keys2
+AuthorizedKeysFile     .ssh/authorized_keys
 
 #AuthorizedPrincipalsFile none
 

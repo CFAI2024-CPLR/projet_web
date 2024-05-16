@@ -106,7 +106,7 @@ server_name [master-control.admin.cfai24.ajformation.fr](http://master-control.a
 }
 User vtiger crée dans la base sql vtiger:
 CREATE DATABASE vtiger;
-CREATE USER 'vtigeruser'@'localhost' IDENTIFIED BY '**************';
+CREATE USER 'vtigeruser'@'localhost' IDENTIFIED BY 'azerty@123';
 GRANT ALL PRIVILEGES ON vtiger.* TO 'vtigeruser'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;

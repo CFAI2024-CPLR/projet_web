@@ -44,18 +44,18 @@ La distribution linux choisie est : Rocky (latest)
 
 ## création et configuration de la VM
 
-![creation de la VM](../Images/Etape1/1.png)
+![creation de la VM](../Images/1_creationVM/1.png)
 
-![creation de la VM](../Images/Etape1/2.png)
+![creation de la VM](../Images/1_creationVM/2.png)
 
-![creation de la VM](../Images/Etape1/3.png)
+![creation de la VM](../Images/1_creationVM/3.png)
 
-![creation de la VM](../Images/Etape1/4.png)
+![creation de la VM](../Images/1_creationVM/4.png)
 
-![creation de la VM](../Images/Etape1/5.png)
+![creation de la VM](../Images/1_creationVM/5.png)
 
-![creation de la VM](../Images/Etape1/6.png)
+![creation de la VM](../Images/1_creationVM/6.png)
 
 **Résumer de la configuration :**
 
-![creation de la VM](../Images/Etape1/7.png)
+![creation de la VM](../Images/1_creationVM/7.png)

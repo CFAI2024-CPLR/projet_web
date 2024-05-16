@@ -1,6 +1,7 @@
 - Identité : Bureau Mathis
 
 # Activité 1 : création de la VM et Configuration Rocky Linux (temps total additionné : 20min)
+commit : https://github.com/CFAI2024-CPLR/projet_web/commit/73f27b6f40c178c040849e070a4ba607144a54e8
 
 ## Connexion à proxmox et création VM (temps passé : 10min)
 
@@ -27,7 +28,7 @@
 
  
 # Activité 2 : Configuration du réseau (temps total additionné 40min)
-
+commit : https://github.com/CFAI2024-CPLR/projet_web/commit/73f27b6f40c178c040849e070a4ba607144a54e8
 ## Ajout de l'ipv6 manuelle (temps passé 30min)
 - Récupérer l'ipv6 automatique (2a03:5840:111:1024:be24:11ff:fe6d:f34a)
 - Sur Rocky utiliser le CLI NetworkManager pour ajouter l'ip
@@ -59,6 +60,7 @@ quit
 ![image](./images/DNS.jpg)
 
 # Activité 3 : Configuration des utilisateurs et des groupes (temps passé 30min)
+commit : https://github.com/CFAI2024-CPLR/projet_web/commit/bdfa26410212a8fd4944bb02b3579d4933ca9d78
 - Répéter l'opération suivante pour tous les utilisateurs à créer :
 
 ```
@@ -83,6 +85,8 @@ usermod -aG gestion rwarner
 ```
 
 # Activité 4 : Gestion de la hiérarchie des dossiers (temps passé 30min)
+commit : https://github.com/CFAI2024-CPLR/projet_web/commit/bdfa26410212a8fd4944bb02b3579d4933ca9d78
+
 - Effectuer les commandes suivantes : 
 ```
 mkdir -p /websites/vitrine
@@ -105,6 +109,7 @@ sudo chmod -R 775 /websites
 - les utilisateurs sont créés, les dossiers aussi, les autorisations sont en place et les groupes aussi. Il va maintenant falloir passer à l'installation de pico cms et YetiForce ainsi qu'à la configuration de nginx.
 
 # Activité 5 : Installation initiale des sites web (temps passé 10min)
+commit : https://github.com/CFAI2024-CPLR/projet_web/commit/d9f49eb673896ec6fd065e31374e921e0b2167ef
 
 ## Pico CMS :
 - Effectuer les commandes suivantes : 
@@ -123,6 +128,9 @@ sudo unzip YetiForceCRM-6.4.0-complete.zip
 ```
 
 # Activité 6 : configuration de nginx (temps passé 4h)
+commit : https://github.com/CFAI2024-CPLR/projet_web/commit/20108b3cb2acf02aa24af54167210d006646d681
+
+commit 2 : https://github.com/CFAI2024-CPLR/projet_web/commit/13c5d834afbed6457a3abdf10b1efd4044d8517d
 
 ## Création des fichiers de configuration :
 ```
@@ -201,6 +209,7 @@ curl -I http://central-cowboy.admin.cfai24.ajformation.fr
 # Activité 7 : configuration des sites web (temps total additionné 8h)
 
 ## Installation site vitrine (PicoCMS) et description des erreurs rencontrées (temps passé 3h) : 
+commit : https://github.com/CFAI2024-CPLR/projet_web/commit/6f4b8c5ebb7535c3357ac4d71cfae57af82e5a23
 - Tout d'abord erreur 500 liée à une erreur PHP sur les 2 sites web
     - Installation du dépot remi-release-9 qui contient les anciennes versions de php :
     ```
@@ -265,6 +274,7 @@ curl -I http://central-cowboy.admin.cfai24.ajformation.fr
     ![image](./images/picohome.jpg)
 
 ## Installation site gestion (YetiForce) (temps passé 5h) : 
+commit : https://github.com/CFAI2024-CPLR/projet_web/commit/4ab7ceb6427552fcd49610d63448eb150816161a
 - Création d'une socket php-fpm (7.4 aussi par chance)
 
 ```
@@ -386,3 +396,18 @@ allow_url_include = 0
 
 - après avoir effectué tout cela j'ai accès au site YetiForce mais après avoir résolu tous les soucis indiqué par l'installeur, l'installation est en erreur malgré tout :
 ![image](./images/yetierror.jpg)
+
+# Activité 8 : configurer ssh sur chaque utilisateur 
+- Pour chaque utilisateur (remplacer webmaster par le bon user): 
+
+```
+sudo mkdir -p /home/webmaster/.ssh
+sudo nano /home/webmaster/.ssh/authorized_keys
+
+# Copie-colle :
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWsfbTbSlxcvxUL1286nwhwrDPJq6bctkxPpZ+TyujHrDwyymvqEjMJNxiwDPRoomPgOcg+YYUYXbfRiLp0VNlUqA5oG9nhlgtiryZrWY6zrywnsDOk6wJvWA/YNbWLlFN14OiKXOH5KJpgYQh1pLIw1TPeR56vU5wv1Ggb0Jr1sg14TJgm2M4lSmQs1CAY8hBLDj/qQcwVNtuYqTXOulwCPZAzhP6ncHM7lHbwJua/3bGQ8IeFzjRGjL0s2XVECYPufCbM0cX1VtmaSQdVmwqXGW2c+rPAq8cFHecfaw/0fdSMeNV4qSl+VqpCGn/XXnpWAYi0OfifddH80ffdAp5 /home/jerome/.ssh/id_rsa
+
+sudo chmod 700 /home/webmaster/.ssh
+sudo chmod 600 /home/webmaster/.ssh/authorized_keys
+sudo chown -R webmaster:webmaster /home/webmaster/.ssh
+```

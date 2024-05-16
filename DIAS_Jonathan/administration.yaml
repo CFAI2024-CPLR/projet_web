@@ -34,7 +34,7 @@ sites_web:
       login: [jdias]
       password: [Azerty]
     - type: gestion
-      chemin: /websites/vitrine/
+      chemin: /websites/gestion/
       url: customer-resource.admin.cfai24.ajformation.fr
       login: [admin]
       password: [Admin]

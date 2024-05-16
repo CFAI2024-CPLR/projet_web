@@ -411,3 +411,38 @@ sudo chmod 700 /home/webmaster/.ssh
 sudo chmod 600 /home/webmaster/.ssh/authorized_keys
 sudo chown -R webmaster:webmaster /home/webmaster/.ssh
 ```
+
+# Tree des fichiers de configuration :
+
+```
+serveur_web
+├── etc/nginx/
+│   ├── nginx.conf
+│   └── conf.d
+│       ├── central-cowboy.admin.conf
+│       ├── central-cowboy.web.conf
+|       └── php-fpm.conf
+├── /etc/opt/remi/php74/
+|    ├── php-fpm.conf
+|    └───php-fpm.d/
+|        ├── www.conf
+|        ├── gestion.conf
+|        └── vitrine.conf
+└── websites
+    ├── gestion
+    │   └── config
+    │      └── *
+    └── vitrine
+        └── config
+            └── *
+serveur_bdd
+└── mysql.cnf
+Config VM
+├── /etc/hosts/
+└── /etc/hostname/
+SSH
+├── /home/<username>/.ssh/authorized_keys
+└── /etc/ssh/sshd_config/
+Service perso
+└── /etc/systemd/system/mkdir.service
+```

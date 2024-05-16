@@ -16,10 +16,12 @@ Pour créer la machine virtuelle cela a été asse simple. Il suffisait de mettr
 
 ### Installation de l'OS
 
-J'ai recommancé l'installation 4 fois. J'ai eu des problèmes avec l'installation de base à la fin et je me suis trompé plusieurs fois sur les partitions.
+J'ai recommencé l'installation 4 fois. J'ai eu des problèmes avec l'installation de base à la fin et je me suis trompé plusieurs fois sur les partitions.
 J'avais quasiment terminé le TP que je me suis aperçu que mes partitons était mauvaise car je n'avais plus d'espace pour télécharger les logiciels manquants.
 J'ai réinstallé l'OS une nouvelle fois avec les bonnes partitions.
+
 ![Partition_Disques](https://github.com/CFAI2024-CPLR/projet_web/assets/92736112/92cd31fb-775a-4b53-8a9f-172bdd405157)
+
 * Temps de travail : 2 heures
 * Travaux réalisés :
     - Renseigment des informations (Login/MDP/...)

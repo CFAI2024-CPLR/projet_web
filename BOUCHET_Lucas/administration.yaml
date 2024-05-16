@@ -19,12 +19,14 @@ services:
       version: 9.2.1
     - name: snmp server
       version:  5.9.3
+    - name: cgg
+      version: 12.2.0
     - name: nginx
       version: 1.22.1
     - name: mariadb
       version: 11.3.2
     - name: php
-      version: 
+      version: 8.2.18
 sites_web:
     - type: vitrine
       chemin: /websites/vitrine/

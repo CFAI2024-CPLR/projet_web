@@ -144,5 +144,5 @@ chown -R webmaster:vitrine /websites/vitrine
 
 L'URL des sites web est :
 
-Gestion : http://global-vision.admin.cfai24.ajformation.fr/
-Vitrine : http://global-vision.web.cfai24.ajformation.fr/
+* Gestion : http://global-vision.admin.cfai24.ajformation.fr/
+* Vitrine : http://global-vision.web.cfai24.ajformation.fr/

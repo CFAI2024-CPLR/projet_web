@@ -89,6 +89,19 @@ Installation de Make
 
   - SITE de gestion :  /etc/apache2/sites-available/internal-linkage.admin.cfai24.ajformation.fr.conf
 
+  ## Activité 8 : configuration des dns
+- **Temps de réalisation :** 30 min
+- **Travaux réalisés :** 
+  - enregistrement des dns
+
+  ## Activité 9 : configuration des site web 
+- **Temps de réalisation :** 30 min
+- **Travaux réalisés :** 
+  - installation picocms 
+  - installation vitigier 
+
+
+
    
 - **Commit :** [Lien du commit](URL_DU_COMMIT)
 - **Lien vers le fichier de configuration final :** [Nom du fichier](URL_DU_FICHIER)

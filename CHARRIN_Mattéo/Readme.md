@@ -95,26 +95,26 @@ sudo usermod -aG gestion bcramer
 
 Ensuite on crée les différents sous-dossier de website
 ```shell
-sudo mkdir -p /websites/vitrine /websites/gestion
+sudo mkdir -p /website/vitrine /website/gestion
 ```
 
 Et on viens ajouter les propriétaires et groupes a ces dossier 
 ```shell
-sudo chown apache:cplr /websites
-sudo chown webmaster:vitrine /websites/vitrine
-sudo chown webmaster:gestion /websites/gestion
+sudo chown nginx:cplr /website
+sudo chown webmaster:vitrine /website/vitrine
+sudo chown webmaster:gestion /website/gestion
 ```
 
 puis on corrige les droit avec chmod 
 
 ```shell 
-chmod 775 /websites
-chmod 775 /websites/vitrine
-chmod 775 /websites/gestion
+chmod 775 /website
+chmod 775 /website/vitrine
+chmod 775 /website/gestion
 ```
 
 
-## 5) Enregistrement DNS 
+## 5) Enregistrement DNS 1h30
 
 On suit les instruction disposer sur le site :  http://ns1.cfai2024.ajformation.fr:5000/
 
@@ -164,3 +164,44 @@ systemctl start snmpd
 systemctl start mysqld
 systemctl start nginx
 ```
+
+## 7) Configuration de Nginx 4h 
+
+On se rend dans le fichier de conf de nginx 
+```shell 
+sudo nano /etc/nginx/nginx.conf
+```
+
+```nginx
+server {
+    listen [::]:80;
+    server_name product-metrics.web.cfai24.ajformation.fr;
+   
+
+    location / {
+        proxy_pass http://[2a03:5840:111:1024::21]/wbesite/vitrine;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+server{
+    listen [::]:80;
+    server_name product-metrics.admin.cfai24.ajformation.fr;
+    location / {
+        proxy_pass http://[2a03:5840:111:1024::21]/website/gestion;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+Puis on ouvre le port 80 pour le http
+
+```shell
+sudo firewall-cmd --permanent --add-port=80/tcp
+```
+

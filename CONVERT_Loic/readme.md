@@ -5,7 +5,7 @@
 # Création de la VM
  Temps de réalisation : 45 min
 
- Travaux réalisés:
+Travaux réalisés:
  1. Création de la VM
  2. Partionnement de la VM et création des utilisateurs root et lconvert
  3. Update des packages avec la commande :
@@ -17,7 +17,10 @@
  Temps de réalisation : 30 min
 
 Travaux réalisés: 
-Ajout d'une adresse IPv6 : sudo nmcli con mod ens18 ipv6.addresses "2a03:5840:111:1024:be24:11ff:feb7:a70a/64, 2a03:5840:111:1024::14/64"
+* Ajout d'une adresse IPv6 :
+```
+sudo nmcli con mod ens18 ipv6.addresses "2a03:5840:111:1024:be24:11ff:feb7:a70a/64, 2a03:5840:111:1024::14/64"
+```
 Activer la connexion réseau pour l'interface ens18 : 
 ```
 sudo nmcli con up ens18
@@ -34,6 +37,7 @@ Travaux réalisés: Enregistrement des FQDN
 ![](Images/ajoutdns2.png)
 
 ![](Images/ajoutdns3.png)
+
 
 | Domaine                                             | Adresse IPv6                                 |
 |-----------------------------------------------------|----------------------------------------------|
@@ -53,22 +57,25 @@ sudo dnf install -y openssh-server gcc make net-snmp nginx mysql php php-fpm php
 
 Fichier de configuration Nginx :
 * [Configuration](Configuration/nginx.conf)
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/33e126fc9e8de812f5adac17bd346b8f877a43b5)
 
 Fichier de configuration PHP :
 * [Configuration](Configuration/php.ini)
-  
--Configuration ssh :
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/fa5a4daeb2b502817215048bfa682d4f230f4e32)
+* Configuration ssh :
 
 Autorisation de la connexion SSH uniquement depuis l'adresse IPv6 :
+
 ![](Images/authssh.png)
 
 Fichier de configuration SSH : 
 * [Configuration](Configuration/sshd_config)
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/5353dc039a9b294734a07a0dc0ec0c7ed7f6fdfc)
 
 Fichier de configuration du Serveur Mysql :
 * [Configuration](Configuration/mysql-server.cnf)
-
-Après avoir executé la commande suivante : 
+* [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/4c13bdea24ef454acbcade3048500c9dbce3ad35)
+* Après avoir executé la commande suivante : 
 ```
 dnf install -y mysql-server, nous devons démarrer le service --> systemctl start mysqld
 ```
@@ -125,6 +132,16 @@ ssh-copy-id -i wtownsend.pub webmaster@2a03:5840:111:1024:be24:11ff:feb7:a70a
 * On ajoute à la suite la clé publique suivante : 
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWsfbTbSlxcvxUL1286nwhwrDPJq6bctkxPpZ+TyujHrDwyymvqEjMJNxiwDPRoomPgOcg+YYUYXbfRiLp0VNlUqA5oG9nhlgtiryZrWY6zrywnsDOk6wJvWA/YNbWLlFN14OiKXOH5KJpgYQh1pLIw1TPeR56vU5wv1Ggb0Jr1sg14TJgm2M4lSmQs1CAY8hBLDj/qQcwVNtuYqTXOulwCPZAzhP6ncHM7lHbwJua/3bGQ8IeFzjRGjL0s2XVECYPufCbM0cX1VtmaSQdVmwqXGW2c+rPAq8cFHecfaw/0fdSMeNV4qSl+VqpCGn/XXnpWAYi0OfifddH80ffdAp5 /home/jerome/.ssh/id_rsa
+```
+
+Au niveau des sites web demandés, j'arrive me connecter sur mon Nginx mais je n'est pas réussi à configurer Vtiger pourtant j'ai fais des recherches.
+J'ai quand même installer le paquet et extrait le fichier tar.gz J'ai ensuite crée une base de données pour Vtiger (qui ne m'a pas été utile vu que je n'est pas réussi à configurer Vtiger) :
+
+```
+CREATE USER 'vtiger'@'localhost' IDENTIFIED BY 'Secret'; 
+donne les droits : GRANT ALL PRIVILEGES ON vtiger.* TO 'vtiger'@'localhost';
+FLUSH PRIVILEGES;
+exit
 ```
 
 # Utilisateurs

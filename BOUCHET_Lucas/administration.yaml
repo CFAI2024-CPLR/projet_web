@@ -16,15 +16,15 @@ utilisateurs:
     passwd: Nutell@Br3st
 services:
     - name: ssh
-      version: 
+      version: 9.2.1
     - name: snmp server
-      version:  
+      version:  5.9.3
     - name: nginx
-      version: 
-    - name: mysql
-      version:
+      version: 1.22.1
+    - name: mariadb
+      version: 11.3.2
     - name: php
-      version:
+      version: 
 sites_web:
     - type: vitrine
       chemin: /websites/vitrine/
@@ -32,3 +32,5 @@ sites_web:
     - type: gestion
       chemin: /websites/gestion/
       url: http://future-item.admin.cfai24.ajformation.fr/
+      login: lbouchet
+      passwd: Nutell@Br3st

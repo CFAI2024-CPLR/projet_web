@@ -1,0 +1,11 @@
+serveur_web
+├── config
+│   ├── apache2.conf
+│   └── sites-enabled
+│       ├── gestion.conf
+│       └── vitrine.conf
+└── sites
+    ├── gestion
+    └── vitrine
+serveur_bdd
+└── 50-server.cnf

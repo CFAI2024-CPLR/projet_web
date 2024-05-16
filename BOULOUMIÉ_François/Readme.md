@@ -3,7 +3,7 @@
 ## Introduction
 Ce rapport détaille les étapes effectuées pour la préparation et l'administration d'une machine virtuelle destinée à l'entreprise "district-alignment". La mission comprenait la mise en place de deux sites web, la configuration réseau, la création d'utilisateurs et de groupes, l'installation de logiciels et de services, ainsi que la rédaction d'un rapport d'activité.
 
-## Préparation de la machine virtuelle
+## Préparation de la machine virtuelle : 15 Min
 
 ### Caractéristiques de la machine virtuelle
 - **Nom:** district-alignment-fbouloumie
@@ -23,18 +23,21 @@ Ce rapport détaille les étapes effectuées pour la préparation et l'administr
 - 1 partition LVM de 2GB montée sur swap
 - 1 partition LVM restante montée sur /websites (xfs)
 
-### Réseaux
+## Réseaux : 30 Min
 - IPv6 automatique (SLAAC) pour le FQDN VM
 - IPv6 manuelle personnalisée pour les sites web
 
-### Hiérarchie des dossiers
-/websites/
-/websites/vitrine (propriétaire: webmaster, groupe: vitrine)
-/websites/gestion (propriétaire: webmaster, groupe: gestion)
+## Hiérarchie des dossiers : 15 Min
+- /websites/
+- /websites/vitrine (propriétaire: webmaster, groupe: vitrine)
+- /websites/gestion (propriétaire: webmaster, groupe: gestion)
 
-### Utilisateurs et Administration
+### Utilisateurs et Administration : 20 Min
 - **Compte administrateur:** fbouloumie (mot de passe fourni dans le rapport)
-- **Comptes utilisateurs:** webmaster, sbonham (Sue Bonham), gcox (Gregory Cox)
+- **Comptes utilisateurs:** 
+	- webmaster (mdp : webmaster)
+	- sbonham (mdp : sbonham)
+	- gcox (mdp : gcox)
 - **Groupes:** vitrine, gestion
 
 ### Logiciels et services

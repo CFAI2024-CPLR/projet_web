@@ -1,0 +1,28 @@
+administrateur: 
+  identite: Lucas Bruyere
+  login: lbruyere
+machine:
+  fqdn: [corporate-portal.vm.cfai24.ajformation.fr]
+utilisateurs:
+  - login: root
+    passwd: azertyui
+  - login: lbruyere
+    passwd: azertyui
+  - login: webmaster
+    passwd: azertyui
+  - login: cdaniels 
+    passwd: azertyui
+  - login: lpfeiffer 
+    passwd: azertyui
+services:
+    - name: ssh
+      version: OpenSSH_8.7p1
+    - name: nginx
+      version: nginx/1.20.1 (gcc 11.3.1 et openSSL 3.0.7 en supplément)
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://corporate-portal.web.cfai24.ajformation.fr/
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://corporate-portal.admin.cfai24.ajformation.fr/

@@ -1,5 +1,7 @@
 # Auteur : Loic CONVERT
 
+* [administration.yaml](administration.yaml)
+
 # Journal d'activités
 
 # Création de la VM

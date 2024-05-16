@@ -1,0 +1,38 @@
+administrateur: 
+  nom: Thomas COLLADO
+  login: tcollado
+machine:
+  fqdn: [global-vision.vm.cfai24.ajformation.fr]
+utilisateurs:
+    - login: root
+    - passwd: Global007
+    - login: webmaster
+    - passwd: aiQu5eev
+    - login: gmitchell
+    - passwd: ohQuah4m
+    - login: gmacpherson
+    - passwd: omuof2Cu
+services:
+    - name: openSSH
+      version: 9.2
+    - name: nginx
+      version: 1.22.1
+    - name: snmpd
+      version: 5.9.3
+    - name: mariadb
+      version: 10.11.6
+    - name: make
+      version: 4.3
+    - name: gcc
+      version: 12.2.0
+    - name: php
+      version: 8.2.18 
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: https://global-vision.web.cfai24.ajformation.fr
+    - type: gestion
+      chemin: /websites/gestion/
+      url: https://global-vision.admin.cfai24.ajformation.fr
+      login: admin
+      password: Thomas009

@@ -49,7 +49,7 @@ Réalisation :
 
 ## Installation des paquets
 
-Temps de réalisation : 5 minutes
+Temps de réalisation : 10 minutes
 
 Installations des paquets suivants :
 
@@ -59,5 +59,6 @@ Installations des paquets suivants :
 - nginx (1.22.1)
 - php 8.2
 - build-essential
+
 
 

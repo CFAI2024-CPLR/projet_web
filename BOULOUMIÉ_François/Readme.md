@@ -35,6 +35,7 @@ Ce rapport détaille les étapes effectuées pour la préparation et l'administr
 ### Utilisateurs et Administration : 20 Min
 - **Compte administrateur:** fbouloumie (mot de passe fourni dans le rapport)
 - **Comptes utilisateurs:** 
+	- root ( mdp : root)
 	- webmaster (mdp : webmaster)
 	- sbonham (mdp : sbonham)
 	- gcox (mdp : gcox)

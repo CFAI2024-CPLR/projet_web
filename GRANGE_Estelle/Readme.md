@@ -153,5 +153,5 @@
 
      * [Documentation](documentation/6-Sites-Webs.md)
 
-    * [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/e605b14a8e857bdd8e9c0a108a6c70e905fe4dad)
+    * [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/e7266156ab3a8f82cd3676c860f5c6c34c21ac44)
 

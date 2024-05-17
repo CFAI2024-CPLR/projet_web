@@ -119,4 +119,4 @@
 
     * [Documentation](documentation/5-Outils%20et%20services.md)
 
-    * [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/9ed83690d87c94e89c8b99553cb97fd662dc234d#)
+    * [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/e605b14a8e857bdd8e9c0a108a6c70e905fe4dad)

@@ -120,3 +120,19 @@
     * [Documentation](documentation/5-Outils%20et%20services.md)
 
     * [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/e605b14a8e857bdd8e9c0a108a6c70e905fe4dad)
+
+    # configuration du site PICOMS 
+
+- temps de réalisation : 1H
+
+- travaux realisés :
+
+    - installation du site
+
+    - prise de note
+
+     * [Documentation](documentation/6-Sites-Webs.md)
+
+    * [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/e605b14a8e857bdd8e9c0a108a6c70e905fe4dad)
+
+*<u>note</u>* : problème de droits

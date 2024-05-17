@@ -10,7 +10,7 @@
 # creation de la VM
 - temps de réalisation : 25 min
 
-- traveaux realisés :
+- travaux realisés :
     - creation de la VM sur Proxmox
     - prise de note
 
@@ -25,7 +25,7 @@
 
 - temps de réalisation : 35 min
 
-- traveaux realisés :
+- travaux realisés :
     - Installation de L'OS et partionnement du disque
     - prise de note
 
@@ -39,7 +39,7 @@
 
 - temps de réalisation : 3h
 
-- traveaux realisés :
+- travaux realisés :
     - mise en place du SSH et des clés ( celle du proffesseur de Linux et la miennes)
        
         - Désactivation de l'accès root et par mot de passe.
@@ -61,3 +61,40 @@
     <u>*Note*</u> : Cette partie a pris plus de temps que prévu en raison de la longue durée des mises à jour des paquets, qui ont pris environ 40 minutes. En outre, la prise de notes a été laborieuse en raison  de la structure des informations et des captures d'écrans. J'aime organiser mes notes avec soin, ce qui a ajouté à la durée de la prise de notes. Cependant, une fois les mises à jour terminées, je n'ai rencontré aucune difficulté majeure. J'ai eu quelques problèmes lors de la création de l'adresse IPv6 avec la commande `nmcli`, mais j'ai finalement trouvé la solution.
 
     **Je réussis enfin à faire des commits propres ! C'est la fête ! 🎉**
+
+
+# configuration des utilisateurs et des groupes
+
+- **livraison en retard et ne respecte pas les délais.**
+
+- temps de réalisation : 30 min
+
+- travaux realisés :
+
+    - ajoute de l'util'utilisateur egrange en sudo.
+
+    - création les comptes suivants :
+
+    - **webmaster** : compte service
+    - **lberube** (Lori Berube ) : Utilisateur, gestion du site vitrine
+    - **jjackson** (John Jackson): Utilisateur, gestion du site de gestion
+
+- création les groupes suivants :
+
+    - Groupe: **vitrine**
+        - utilisateurs:
+            - webmaster
+            - egrange
+            - lberube - Lori Berube
+
+    - Groupe: **gestion**
+        - utilisateurs:
+            - webmaster
+            - egrange
+            - jjackson - John Jackson
+
+    - prise de note
+
+    * [Documentation](documentation/4-Creation-Utilisateur-Groupes.md)
+
+    * [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/9ed83690d87c94e89c8b99553cb97fd662dc234d#)

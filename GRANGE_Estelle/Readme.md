@@ -98,3 +98,25 @@
     * [Documentation](documentation/4-Creation-Utilisateur-Groupes.md)
 
     * [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/9ed83690d87c94e89c8b99553cb97fd662dc234d#)
+
+    # configuration des outils et des services
+
+    - **livraison en retard et ne respecte pas les délais.**
+
+- temps de réalisation : 1H
+
+- travaux realisés :
+
+    -installations des outils suivants :
+        - serveur ssh
+        - outils de compilation (gcc,make...)
+        - snmp server
+        - apache
+        - MariaDb
+        - php8:2 (dernière version, fonctionne avec apache)
+
+    - prise de note
+
+    * [Documentation](documentation/5-Outils%20et%20services.md)
+
+    * [Commit](https://github.com/CFAI2024-CPLR/projet_web/commit/9ed83690d87c94e89c8b99553cb97fd662dc234d#)

@@ -1,0 +1,4 @@
+- [ ] Configurer les 2 sites webs
+    - [ ] site vitrine : https://picocms.org/
+    - [ ] site gestion : https://doc.yetiforce.com/introduction/download/
+- [ ] Faire le adminstration.yaml

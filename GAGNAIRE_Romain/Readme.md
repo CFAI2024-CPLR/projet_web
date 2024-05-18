@@ -12,13 +12,13 @@ La machine virtuelle que je devais créer comportait les caractéristiques suiva
 - **RAM** : 2Go
 - **Network** : 1 interface
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image.png)
+![alt text](../GAGNAIRE_Romain/images/image.png)
 
 # Configuration du réseau
 
 1. Déterminer l'adresse IPv6 SLAAC.
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-1.png)
+![alt text](../GAGNAIRE_Romain/images/image-1.png)
 
 
 2. Choix d'une adresse IPv6 fixe pour les sites web.
@@ -39,17 +39,17 @@ sudo nmcli con up ens18
 
 -On vérifie qu'elles sont prises en compte.
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-2.png)
+![alt text](../GAGNAIRE_Romain/images/image-2.png)
 
 4. On rajoute de le DNS
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-3.png)
+![alt text](../GAGNAIRE_Romain/images/image-3.png)
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-4.png)
+![alt text](../GAGNAIRE_Romain/images/image-4.png)
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-5.png)
+![alt text](../GAGNAIRE_Romain/images/image-5.png)
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-6.png)
+![alt text](../GAGNAIRE_Romain/images/image-6.png)
 
 | FQDN |Adresse IPv6| Utilisation|
 | :---: | :---: |  :---: |
@@ -64,7 +64,7 @@ Autorisation de la connexion SSH uniquement depuis l'adresse IPv6 2A03:5840:111:
 - On modifie le fichier /etc/ssh/sshd_config
 - On ajoute notre adresse IPv6 à la directive ListenAddress
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-7.png)
+![alt text](../GAGNAIRE_Romain/images/image-7.png)
 
  On redémarre le service
 
@@ -79,11 +79,11 @@ ssh-keygen
 
 - On copie ensuite cette clé sur les tous les users
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-8.png)
+![alt text](../GAGNAIRE_Romain/images/image-8.png)
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-9.png)
+![alt text](../GAGNAIRE_Romain/images/image-9.png)
 
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-10.png)
+![alt text](../GAGNAIRE_Romain/images/image-10.png)
 
 # Création des utilisateurs et des groupes
 
@@ -103,7 +103,7 @@ sudo passwd webmaster
 sudo passwd mshelton
 sudo passwd ecooper
 ```
-![alt text](../projet_web/GAGNAIRE_Romain/images/image-11.png)
+![alt text](../GAGNAIRE_Romain/images/image-11.png)
 
 2. Les groupes :
 

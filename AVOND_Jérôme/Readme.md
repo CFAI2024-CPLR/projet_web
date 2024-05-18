@@ -50,3 +50,72 @@ Firmware Version: rel-1.16.2-0-gea1b7a073390-prebuilt.qemu.org
 
 ```
 
+## Création des dossiers
+
+```shell
+[root@forward-brass ~]# mkdir -p /websites/{vitrine,gestion}
+```
+
+## Créations des utilisateurs
+
+
+- webmaster : compte service
+- krumsey   : Utilisateur, gestion du site vitrine
+- jdiga     : Utilisateur, gestion du site de gestion
+
+```csv
+webmaster ru8IaHeifahZ5ahz
+krumsey Kutushooc2quaevo
+jdiga ieSahyohSevei8oh
+```
+
+> :warning: ```pwgen -s 16``` **is the B3a5t**
+
+```shell
+[root@forward-brass ~]# cat > /tmp/users
+webmaster ru8IaHeifahZ5ahz
+krumsey Kutushooc2quaevo
+jdiga ieSahyohSevei8oh
+[root@forward-brass ~]# while read user pass
+> do
+> useradd -m $user
+> chpasswd <<< "${user}:${pass}"
+> done
+[root@forward-brass ~]#
+
+```
+
+## Création des groupes
+
+- cplr      : compte général
+- vitrine   : gestion du site vitrine
+- gestion   : gestion du site de gestion
+
+```csv
+cplr    javond
+gestion webmaster,jdiga,javond
+vitrine webmaster,krumsey,javond
+```
+
+```shell
+[root@forward-brass ~]# cat > /tmp/groups
+cplr    javond
+gestion webmaster,jdiga,javond
+vitrine webmaster,krumsey,javond
+[root@forward-brass ~]# while read group users
+> do
+> groupadd ${group} -U ${users}
+> done < /tmp/groups
+```
+
+## Affectation des dossiers
+
+```shell
+[root@forward-brass ~]# chown webmaster:vitrine /websites/vitrine/
+[root@forward-brass ~]# chown webmaster:gestion /websites/gestion/
+[root@forward-brass ~]# chmod u=rwx,g=rwx,o=rx /websites/
+[root@forward-brass ~]# chmod u=rwx,g=rwx,o=rx /websites/vitrine/
+[root@forward-brass ~]# chmod u=rwx,g=rwx,o=rx /websites/gestion/
+```
+
+

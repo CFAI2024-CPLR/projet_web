@@ -321,3 +321,20 @@ echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php`
 Ce guide vous aidera à installer et configurer un serveur SSH, les outils de compilation, le serveur SNMP, Apache, MySQL et PHP sur Debian.
 
 
+
+### Ajouter les adresses IPv6 supplémentaires
+
+Utilisez `nmcli` pour ajouter les nouvelles adresses IPv6 à l'interface `ens18`.
+
+bash
+
+`sudo nmcli con mod ens18 +ipv6.addresses "2a03:5840:111:1024::7/64"
+sudo nmcli con mod ens18 +ipv6.addresses "2a03:5840:111:1024::8/64"`
+
+| FQDN | Adresse IPv6 | Utilisation |
+| :-: | :-: | :-: |
+| dynamic-baseline.vm.cfai24.ajformation.fr. | 2a03:5840:111:1024:7a97:cf98:662:cc59 | Accès SSH |
+| dynamic-baseline.web.cfai24.ajformation.fr. | 2a03:5840:111:1024::7 | Site web vitrine |
+| dynamic-baseline.admin.cfai24.ajformation.fr. | 2a03:5840:111:1024::8 | Site web de gestion |
+
+

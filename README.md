@@ -213,3 +213,111 @@ Utilisation de Debian en CLI
 
 Après le redémarrage, vous serez accueilli par l'invite de connexion en ligne de commande (CLI). Connectez-vous avec l'utilisateur créé pendant l'installation.
 
+
+### d'installation des logiciels demander sur Debian
+
+Assurez-vous d'avoir les privilèges root pour effectuer ces installations. Vous pouvez utiliser `sudo` pour chaque commande si vous n'êtes pas connecté en tant que root.
+
+1.  **Mettez à jour le système** :
+
+    bash
+
+-   `sudo apt update
+    sudo apt upgrade -y`
+
+    -   **Installer le serveur SSH** :
+
+    bash
+
+`sudo apt install -y openssh-server`
+
+Pour vérifier que le serveur SSH fonctionne correctement :
+
+bash
+
+-   `sudo systemctl status ssh`
+
+    -   **Installer les outils de compilation** (gcc, make, etc.) :
+
+    bash
+
+    -   `sudo apt install -y build-essential`
+
+    -   **Installer le serveur SNMP** :
+
+    bash
+
+`sudo apt install -y snmpd`
+
+Pour configurer le serveur SNMP, éditez le fichier `/etc/snmp/snmpd.conf` selon vos besoins et redémarrez le service :
+
+bash
+
+-   `sudo systemctl restart snmpd
+    sudo systemctl enable snmpd`
+
+    -   **Installer Apache** :
+
+    bash
+
+    -   `sudo apt install -y apache2`
+
+    Pour vérifier que le serveur Apache fonctionne, ouvrez un navigateur web et accédez à `http://votre_ip`.
+
+    -   **Installer MySQL** :
+
+    bash
+
+`sudo apt install -y mysql-server`
+
+Après l'installation, exécutez la commande suivante pour sécuriser votre installation MySQL :
+
+bash
+
+-   `sudo mysql_secure_installation`
+
+    Suivez les instructions à l'écran pour configurer le mot de passe root de MySQL et sécuriser votre installation.
+
+    -   **Installer PHP** (dernière version compatible avec Apache) :
+
+    bash
+
+`sudo apt install -y php libapache2-mod-php php-mysql`
+
+Pour vérifier l'installation de PHP, créez un fichier de test :
+
+bash
+
+1.  `echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php`
+
+    Ensuite, ouvrez un navigateur web et accédez à `http://votre_ip/info.php`. Vous devriez voir une page d'information sur PHP.
+
+### Résumé des commandes
+
+Voici un résumé de toutes les commandes pour une installation rapide :
+
+bash
+
+`sudo apt update
+sudo apt upgrade -y
+
+sudo apt install -y openssh-server
+sudo systemctl status ssh
+
+sudo apt install -y build-essential
+
+sudo apt install -y snmpd
+sudo systemctl restart snmpd
+sudo systemctl enable snmpd
+
+sudo apt install -y apache2
+
+sudo apt install -y mysql-server
+sudo mysql_secure_installation
+
+sudo apt install -y php libapache2-mod-php php-mysql
+echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php`
+
+Ce guide vous aidera à installer et configurer un serveur SSH, les outils de compilation, le serveur SNMP, Apache, MySQL et PHP sur Debian.
+
+

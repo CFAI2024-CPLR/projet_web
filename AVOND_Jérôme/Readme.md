@@ -46,6 +46,7 @@ Operating System: Rocky Linux 9.4 (Blue Onyx)
  Hardware Vendor: QEMU
   Hardware Model: Standard PC _i440FX + PIIX, 1996_
 Firmware Version: rel-1.16.2-0-gea1b7a073390-prebuilt.qemu.org
+[root@localhost ~]# reboot
 
 ```
 

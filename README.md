@@ -52,6 +52,22 @@ Pour choisir la bonne distribution Linux pour un serveur, il est important de co
 
 Chaque distribution a ses propres forces et faiblesses, et le choix dépend de vos priorités en termes de stabilité, de mise à jour des logiciels, de support et de facilité d'utilisation.
 
+Création de la VM
+====================================================
+
+J'ai créé la VM moi-même dans le Proxmox à l'adresse suivante : <https://cfai2024.ajformation.fr:8006> avec mon compte préalablement créé.
+
+Cette VM a les caractéristiques suivantes (j'ai coché la case "Advanced") :
+
+-   **Name** : dynamic-baseline-bfayant
+-   **Ressource Pool** : bfayant
+-   **Start at boot** : Yes
+-   **ISO** : Debian (latest)
+-   **Disk Size** : 15Go
+-   **VCPU** : 2
+-   **RAM** : 2Go
+
+
 
 d'Installation de Debian en Mode Non Graphique
 ====================================================

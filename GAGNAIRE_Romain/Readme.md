@@ -12,13 +12,13 @@ La machine virtuelle que je devais créer comportait les caractéristiques suiva
 - **RAM** : 2Go
 - **Network** : 1 interface
 
-![alt text](image.png)
+![alt text](../GAGNAIRE_Romain/images/image.png)
 
 # Configuration du réseau
 
 1. Déterminer l'adresse IPv6 SLAAC
 
-![alt text](image-1.png)
+![alt text](../GAGNAIRE_Romain/images/image-1.png)
 
 
 2. Choix d'une adresse IPv6 fixe pour les sites web
@@ -43,21 +43,21 @@ sudo nmcli con up ens18
 
 On vérifie qu'elle est crée :
 
-![alt text](image-2.png)
+![alt text](../GAGNAIRE_Romain/images/image-2.png)
 
 # Configuration du DNS
 
 1. Ajout du nom de domaine et de son adresse ipv6 correspondante
 
-![alt text](image-3.png)
+![alt text](../GAGNAIRE_Romain/images/image-3.png)
 
-![alt text](image-4.png)
+![alt text](../GAGNAIRE_Romain/images/image-4.png)
 
 Puis on fait de même pour les autres
 
-![alt text](image-5.png)
+![alt text](../GAGNAIRE_Romain/images/image-5.png)
 
-![alt text](image-6.png)
+![alt text](../GAGNAIRE_Romain/images/image-6.png)
 
 Résumé :
 
@@ -74,7 +74,7 @@ Résumé :
 - On modifie le fichier /etc/ssh/sshd_config
 - On ajoute notre adresse IPv6 
 
-![alt text](image-7.png)
+![alt text](../GAGNAIRE_Romain/images/image-7.png)
 
 On redémarre le service
 
@@ -97,7 +97,7 @@ sudo passwd webmaster
 sudo passwd mshelton
 sudo passwd ecooper
 ```
-![alt text](image-11.png)
+![alt text](../GAGNAIRE_Romain/images/image-11.png)
 
 2. Création des groupes :
 
@@ -107,11 +107,11 @@ addgroup vitrine
 addgroup gestion
 ```
 
-![alt text](image-12.png)
+![alt text](../GAGNAIRE_Romain/images/image-12.png)
 
 Résultat : 
 
-![alt text](image-14.png)
+![alt text](../GAGNAIRE_Romain/images/image-14.png)
 
 3. Attribution des groupes :
 
@@ -138,7 +138,7 @@ usermod -aG gestion amcfarland
 
 Résultat :
 
-![alt text](image-15.png)
+![alt text](../GAGNAIRE_Romain/images/image-15.png)
 
 ## Création d'une clé SSH pour la connexion 
 
@@ -158,11 +158,11 @@ ssh-copy-id -i .ssh/customer-ideation.pub amcfarland@2A03:5840:111:1024:BC26:11F
 
 Résultat :
 
-![alt text](image-8.png)
+![alt text](../GAGNAIRE_Romain/images/image-8.png)
 
-![alt text](image-9.png)
+![alt text](../GAGNAIRE_Romain/images/image-9.png)
 
-![alt text](image-10.png)
+![alt text](../GAGNAIRE_Romain/images/image-10.png)
 
 3. On ajoute la clé publique demandé
 
@@ -176,11 +176,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWsfbTbSlxcvxUL1286nwhwrDPJq6bctkxPpZ+Tyuj
 
 Résultat : 
 
-![alt text](image-16.png)
+![alt text](../GAGNAIRE_Romain/images/image-16.png)
 
-![alt text](image-17.png)
+![alt text](../GAGNAIRE_Romain/images/image-17.png)
 
-![alt text](image-18.png)
+![alt text](../GAGNAIRE_Romain/images/image-18.png)
 
 
 # Configuration de l'arborescence
@@ -215,7 +215,7 @@ Résultat :
 mkdir /websites/vitrine
 mkdir /websites/gestion
 ```
-![alt text](image-13.png)
+![alt text](../GAGNAIRE_Romain/images/image-13.png)
 
 3. Configuration des propriétés et des droits :
 
@@ -233,8 +233,7 @@ chmod 775 /websites/gestion
 
 Résultat : 
 
-![alt text](image-19.png)
-
+![alt text](../GAGNAIRE_Romain/images/image-19.png)
 
 ## Installation des logicels demandé 
 
@@ -249,14 +248,14 @@ sudo systemctl start sshd
 sudo systemctl status sshd
 ```
 
-![alt text](image-23.png)
+![alt text](../GAGNAIRE_Romain/images/image-23.png)
 
 ### Outils de compilation
 ```
 sudo dnf group install "Development Tools"
 ```
 
-![alt text](image-24.png)
+![alt text](../GAGNAIRE_Romain/images/image-24.png)
 
 ###  SNMP Server
 ```
@@ -266,7 +265,7 @@ sudo systemctl start snmpd
 sudo systemctl status snmpd
 ```
 
-![alt text](image-25.png)
+![alt text](../GAGNAIRE_Romain/images/image-25.png)
 
 ###  Apache HTTP Server
 ```
@@ -276,7 +275,7 @@ sudo systemctl start httpd
 sudo systemctl status httpd
 ```
 
-![alt text](image-26.png)
+![alt text](../GAGNAIRE_Romain/images/image-26.png)
 
 ###  MySQL 
 ```
@@ -287,7 +286,7 @@ sudo systemctl start mysqld
 sudo systemctl status mysqld
 ```
 
-![alt text](image-27.png)
+![alt text](../GAGNAIRE_Romain/images/image-27.png)
 
 ### PHP
 ```
@@ -297,5 +296,5 @@ sudo systemctl start php-fpm
 sudo systemctl status php-fpm
 ```
 
-![alt text](image-28.png)
+![alt text](../GAGNAIRE_Romain/images/image-28.png)
 

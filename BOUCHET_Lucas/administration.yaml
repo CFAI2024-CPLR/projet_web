@@ -1,0 +1,38 @@
+administrateur: 
+  identite: Lucas Bouchet
+  login: lbouchet
+machine:
+  fqdn: [future-item.vm.cfai24.ajformation.fr]
+utilisateurs:
+  - login: root
+    passwd: Nutell@Br3st
+  - login: lbouchet
+    passwd: ****
+  - login: webmaster
+    passwd: Nutell@Br3st
+  - login: dherring
+    passwd: Nutell@Br3st
+  - login: anance
+    passwd: Nutell@Br3st
+services:
+    - name: ssh
+      version: 9.2.1
+    - name: snmp server
+      version:  5.9.3
+    - name: cgg
+      version: 12.2.0
+    - name: nginx
+      version: 1.22.1
+    - name: mariadb
+      version: 11.3.2
+    - name: php
+      version: 8.2.18
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: http://future-item.web.cfai24.ajformation.fr/
+    - type: gestion
+      chemin: /websites/gestion/
+      url: http://future-item.admin.cfai24.ajformation.fr/
+      login: lbouchet
+      passwd: Nutell@Br3st

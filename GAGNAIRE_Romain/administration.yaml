@@ -7,16 +7,16 @@ machine:
 
 utilisateurs:
   - login: webmaster
-    passwd: webmaster
+    passwd: Web1!MAsteer2!
 
   - login: root
     passwd: tototatatiti12
 
   - login: mshelton
-    passwd: mshelton
+    passwd: M!Shelto12!n
 
   - login: ecooper 
-    passwd: ecooper
+    passwd: 1EC00per!2
 
 services:
     - name: ssh

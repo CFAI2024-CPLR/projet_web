@@ -289,6 +289,7 @@ sudo systemctl status mysqld
 ![alt text](../GAGNAIRE_Romain/images/image-27.png)
 
 ### PHP
+
 ```
 sudo dnf install php
 sudo systemctl enable php-fpm

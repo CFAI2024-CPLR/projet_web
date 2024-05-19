@@ -8,7 +8,7 @@ Identité
 
 **Prénom**: Bastien
 
-==
+--------
 
 # Présentation de Debian
 

@@ -1,25 +1,31 @@
 administrateur: 
   identite: Romain Gagnaire
   login: rgagnaire
+
 machine:
   fqdn: central-scrub.vm.cfai24.ajformation.fr
+
 utilisateurs:
   - login: webmaster
-    passwd: *webmaster*
+    passwd: webmaster
+
   - login: root
-    passwd: *tototatatiti12*
+    passwd: tototatatiti12
+
   - login: mshelton
-    passwd: *mshelton*
+    passwd: mshelton
+
   - login: ecooper 
-    passwd: *ecooper*
+    passwd: ecooper
+
 services:
     - name: ssh
       version: 8.7
-    - name: nginx
+    - name: snpm
+      version : 5.9.1
+    - name: apache
       version: 2.4.57
     - name: mysql
       version: 8.0.36
     - name: php
-      version: 8.1
-    - name: snpm
-      version : 5.9.1
+      version: 8.1.28

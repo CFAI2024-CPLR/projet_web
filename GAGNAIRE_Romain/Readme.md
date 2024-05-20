@@ -2,7 +2,8 @@
 
 ## Paramétrage de la machine virtuelle
 
-La machine virtuelle que je devais créer comportait les caractéristiques suivantes :
+La machine virtuelle demandait les caractéristiques suivantes :
+
 - **Name**: central-scrub-rgagnaire
 - **Ressource Pool**: rgagnaire
 - **Start at boot** : yes
@@ -12,9 +13,12 @@ La machine virtuelle que je devais créer comportait les caractéristiques suiva
 - **RAM** : 2Go
 - **Network** : 1 interface
 
+
 ![alt text](../GAGNAIRE_Romain/images/image.png)
 
 # Configuration du réseau
+
+## Les adresses ipv6
 
 1. Déterminer l'adresse IPv6 SLAAC
 
@@ -23,29 +27,31 @@ La machine virtuelle que je devais créer comportait les caractéristiques suiva
 
 2. Choix d'une adresse IPv6 fixe pour les sites web
 
-Nous avons décidé de renseigner nos adresses IPv6 fixes dans un document [Administration Linux - IPv6](https://docs.google.com/spreadsheets/d/1V8o3TDtap5S8ppwWNqIwPzmyeoWmFgG2QRDR0904q9Y/edit#gid=0).
+Nous avons décidé de renseigner nos adresses IPv6 fixes dans un document [alt text](https://docs.google.com/spreadsheets/d/1V8o3TDtap5S8ppwWNqIwPzmyeoWmFgG2QRDR0904q9Y/edit#gid=0).
 
-La mienne étant : 2A03:5840:111:1024::13
+- La mienne étant : 2A03:5840:111:1024::13
 
 3. Paramètrage de l'adresse IPv6 fixe
 
-- Pour ajouter une autre adresse IPv6 :
+Pour ajouter une autre adresse IPv6 :
 
 ```
 sudo nmcli con mod ens18 ipv6.addresses "2a03:5840:111:1024:be24:11ff:fe3f:62c0/64, 2a03:5840:111:1024::13/64"
 ```
 
-- On applique ensuite les modifications :
+On applique ensuite les modifications :
 
 ```
 sudo nmcli con up ens18
 ```
 
-On vérifie qu'elle est crée :
+On vérifie que notre adresse ipv6 est crée :
 
 ![alt text](../GAGNAIRE_Romain/images/image-2.png)
 
-# Configuration du DNS
+# Le DNS
+
+## Configuration du DNS
 
 1. Ajout du nom de domaine et de son adresse ipv6 correspondante
 
@@ -59,13 +65,15 @@ Puis on fait de même pour les autres
 
 ![alt text](../GAGNAIRE_Romain/images/image-6.png)
 
-Résumé :
+<center>Résumé des nom de domaines affilié aux adresse ipv6 :</center>
 
 | FQDN |Adresse IPv6| Utilisation|
 | :---: | :---: |  :---: |
 |central-scrub.vm.cfai24.ajformation.fr.|  2a03:5840:111:1024:be24:11ff:fe3f:62c0| Accès SSH 
 |central-scrub.web.cfai24.ajformation.fr.| 2a03:5840:111:1024::13 | Site web vitrine
 | central-scrub.admin.cfai24.ajformation.fr.| 2a03:5840:111:1024::13 | Site web de gestion
+
+# Le SSH
 
 ## Configuration du SSH
 
@@ -76,10 +84,12 @@ Résumé :
 
 ![alt text](../GAGNAIRE_Romain/images/image-7.png)
 
-On redémarre le service
+- On redémarre le service
 
 
-##  Création des utilisateurs et des groupes
+# Les utilisateurs et les groupes
+
+## Création des utilisateurs et des groupes
 
 1. Utilisateurs 
 
@@ -109,8 +119,6 @@ addgroup gestion
 
 ![alt text](../GAGNAIRE_Romain/images/image-12.png)
 
-Résultat : 
-
 ![alt text](../GAGNAIRE_Romain/images/image-14.png)
 
 3. Attribution des groupes :
@@ -136,11 +144,9 @@ usermod -aG gestion scagnolati
 usermod -aG gestion amcfarland
 ```
 
-Résultat :
-
 ![alt text](../GAGNAIRE_Romain/images/image-15.png)
 
-## Création d'une clé SSH pour la connexion 
+## Création d'une clé SSH pour la connexion pour les utilisateurs
 
 1. On génère une clé SSH 
 
@@ -151,18 +157,17 @@ ssh-keygen
 2. Ajout de la clé ssh pour les utilisateurs
 
 ```
-ssh-copy-id -i .ssh/customer-ideation.pub webmaster@2A03:5840:111:1024:BC26:11FF:FE46:D54D
-ssh-copy-id -i .ssh/customer-ideation.pub mbarr@2A03:5840:111:1024:BC26:11FF:FE46:D54D
-ssh-copy-id -i .ssh/customer-ideation.pub amcfarland@2A03:5840:111:1024:BC26:11FF:FE46:D54D
+ssh-copy-id -i .ssh/macle.pub webmaster@2a03:5840:111:1024:be24:11ff:fe3f:62c0
+ssh-copy-id -i .ssh/macle.pub mshelton@2a03:5840:111:1024:be24:11ff:fe3f:62c0
+ssh-copy-id -i .ssh/macle.pub ecooper@2a03:5840:111:1024:be24:11ff:fe3f:62c0
 ```
 
-Résultat :
+![alt text](../GAGNAIRE_Romain/images/image-30.png)
+
+![alt text](../GAGNAIRE_Romain/images/image-10.png)
 
 ![alt text](../GAGNAIRE_Romain/images/image-8.png)
 
-![alt text](../GAGNAIRE_Romain/images/image-9.png)
-
-![alt text](../GAGNAIRE_Romain/images/image-10.png)
 
 3. On ajoute la clé publique demandé
 
@@ -173,17 +178,15 @@ Résultat :
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWsfbTbSlxcvxUL1286nwhwrDPJq6bctkxPpZ+TyujHrDwyymvqEjMJNxiwDPRoomPgOcg+YYUYXbfRiLp0VNlUqA5oG9nhlgtiryZrWY6zrywnsDOk6wJvWA/YNbWLlFN14OiKXOH5KJpgYQh1pLIw1TPeR56vU5wv1Ggb0Jr1sg14TJgm2M4lSmQs1CAY8hBLDj/qQcwVNtuYqTXOulwCPZAzhP6ncHM7lHbwJua/3bGQ8IeFzjRGjL0s2XVECYPufCbM0cX1VtmaSQdVmwqXGW2c+rPAq8cFHecfaw/0fdSMeNV4qSl+VqpCGn/XXnpWAYi0OfifddH80ffdAp5 /home/jerome/.ssh/id_rsa
 ```
 
-
-Résultat : 
-
 ![alt text](../GAGNAIRE_Romain/images/image-16.png)
 
 ![alt text](../GAGNAIRE_Romain/images/image-17.png)
 
 ![alt text](../GAGNAIRE_Romain/images/image-18.png)
 
+# Arborescence
 
-# Configuration de l'arborescence
+## Configuration de l'arborescence
 
 1. Configuration demandé :
 
@@ -231,16 +234,18 @@ chmod 775 /websites/vitrine
 chmod 775 /websites/gestion
 ```
 
-Résultat : 
-
 ![alt text](../GAGNAIRE_Romain/images/image-19.png)
 
+# Logiciels
+
 ## Installation des logicels demandé 
+
+1. On met à jour nos paquets
 
 ```
 sudo dnf update
 ```
-### OpenSSH
+2. SSH
 ```
 sudo dnf install openssh-server
 sudo systemctl enable sshd
@@ -250,14 +255,14 @@ sudo systemctl status sshd
 
 ![alt text](../GAGNAIRE_Romain/images/image-23.png)
 
-### Outils de compilation
+3. outils de compilation
 ```
 sudo dnf group install "Development Tools"
 ```
 
 ![alt text](../GAGNAIRE_Romain/images/image-24.png)
 
-###  SNMP Server
+4. SNMP Server
 ```
 sudo dnf install net-snmp net-snmp-utils
 sudo systemctl enable snmpd
@@ -267,7 +272,7 @@ sudo systemctl status snmpd
 
 ![alt text](../GAGNAIRE_Romain/images/image-25.png)
 
-###  Apache HTTP Server
+5. Apache
 ```
 sudo dnf install httpd
 sudo systemctl enable httpd
@@ -277,7 +282,7 @@ sudo systemctl status httpd
 
 ![alt text](../GAGNAIRE_Romain/images/image-26.png)
 
-###  MySQL 
+6. Base de donnée MySQL 
 ```
 sudo dnf install https://dev.mysql.com/get/mysql80-community-release-el8-1.noarch.rpm
 sudo dnf install mysql-community-server
@@ -288,8 +293,7 @@ sudo systemctl status mysqld
 
 ![alt text](../GAGNAIRE_Romain/images/image-27.png)
 
-### PHP
-
+7. PHP
 ```
 sudo dnf install php
 sudo systemctl enable php-fpm
@@ -299,3 +303,64 @@ sudo systemctl status php-fpm
 
 ![alt text](../GAGNAIRE_Romain/images/image-28.png)
 
+# Les sites webs
+
+## Configuration du site vitrine avec hugo
+
+1. On modifie le fichier httpd.conf pour donner liens de notre site web
+
+![alt text](../GAGNAIRE_Romain/images/image-35.png)
+
+2. Installation et configuration de hugo 
+```
+cd /websites/vitrine
+sudo wget https://github.com/gohugoio/hugo/releases/download/v0.125.5/hugo_extended_0.125.5_Linux-64bit.tar.gz
+sudo tar -xzf hugo_extended_0.125.5_Linux-64bit.tar.gz -C /usr/local/bin
+hugo new site /website/vitrine/
+hugo
+```
+3. On attribu les droits aux dossiers
+
+```
+sudo chown -R webmaster:vitrine /websites/vitrine
+```
+
+![alt text](../GAGNAIRE_Romain/images/image-31.png)
+
+4. Création du fichier de configuration
+
+```
+cd /etc/httpd/sites-available
+sudo touch vitrine.conf
+sudo nano vitrine.conf
+```
+
+5. Configuration de ce fichier
+```
+<VirtualHost *:80>
+    ServerName district-ownership.web.cfai24.ajformation.fr
+    DocumentRoot /websites/vitrine/public
+    <Directory "/websites/vitrine/public">
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog /var/log/httpd/vitrine_error.log
+    CustomLog /var/log/httpd/vitrine_access.log combined
+</VirtualHost>
+```
+
+![alt text](../GAGNAIRE_Romain/images/image-32.png)
+
+6. Création du liens
+
+```
+sudo ln -s /etc/httpd/sites-available/vitrine.conf /etc/httpd/sites-enabled/vitrine.conf
+```
+
+![alt text](../GAGNAIRE_Romain/images/image-33.png)
+
+Avant : 
+
+![alt text](image-34.png)
+
+Après :

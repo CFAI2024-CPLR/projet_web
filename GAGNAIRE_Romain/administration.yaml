@@ -29,3 +29,8 @@ services:
       version: 8.0.36
     - name: php
       version: 8.1.28
+
+sites_web:
+    - type: vitrine
+      chemin: /websites/vitrine/
+      url: central-scrub.web.cfai24.ajformation.fr

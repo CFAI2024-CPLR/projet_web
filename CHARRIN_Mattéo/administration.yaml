@@ -1,0 +1,17 @@
+administrateur: 
+  identite: Mattéo CHARRIN
+  login: mcharrin
+machine:
+  fqdn: [central-cowboy.vm.cfai24.ajformation.fr]
+utilisateurs:
+  - login: root
+    passwd: a
+  - login: mcharrin
+    passwd: secret
+  - login: webmaster 
+    passwd: ppssBaX36D8N39
+  - login: cchampagne
+    passwd: ppssBaX36D8N38
+  - login: bcramer
+    passwd: ppssBaX36D8N37
+
